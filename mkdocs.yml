@@ -93,7 +93,14 @@ nav:
       - Unidade III – Componentização: trilha-figma/unidade-3.md
       - Unidade IV – Prototipagem & Dev Mode: trilha-figma/unidade-4.md
       - Desafios Práticos: trilha-figma/desafio.md
-  - Gamificação: trilha-gamificacao/index.md
+  - Gamificação:
+      - Visão Geral: trilha-gamificacao/index.md
+      - Unidade I - Fundamentos da Gamificação: trilha-gamificacao/unidade-1.md
+      - Unidade II - O Problema e o Contexto: trilha-gamificacao/unidade-2.md
+      - Unidade III - Tipos de Jogadores e Psicologia: trilha-gamificacao/unidade-3.md
+      - Unidade IV - Design e Criação da Jornada: trilha-gamificacao/unidade-4.md
+      - Unidade V - Prototipação, Teste e PGG: trilha-gamificacao/unidade-5.md
+      - Desafios Práticos: trilha-gamificacao/desafio.md
   - Mobile:
       - Visão Geral: trilha-mobile/index.md
       - Unidade I – Fundamentos Mobile & Onboarding: trilha-mobile/unidade-1.md
