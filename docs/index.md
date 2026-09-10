@@ -43,4 +43,11 @@ Bem-vindo ao portal oficial de capacitação da **Orc’estra Gamificação**. C
     </div>
   </a>
 
+  <a href="trilha-mobile/" class="trilha-card">
+    <div>
+      <h3>Mobile</h3>
+      <p>Capacitação em desenvolvimento mobile com React Native e Lynx.</p>
+    </div>
+  </a>
+
 </div>
