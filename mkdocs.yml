@@ -94,3 +94,12 @@ nav:
       - Unidade IV – Prototipagem & Dev Mode: trilha-figma/unidade-4.md
       - Desafios Práticos: trilha-figma/desafio.md
   - Gamificação: trilha-gamificacao/index.md
+  - Mobile:
+      - Visão Geral: trilha-mobile/index.md
+      - Unidade I – Fundamentos Mobile & Onboarding: trilha-mobile/unidade-1.md
+      - Unidade II – JavaScript & TypeScript: trilha-mobile/unidade-2.md
+      - Unidade III – React Native Primeiros Passos: trilha-mobile/unidade-3.md
+      - Unidade IV – React Native Navegação & Estado: trilha-mobile/unidade-4.md
+      - Unidade V – React Native APIs & Recursos Nativos: trilha-mobile/unidade-5.md
+      - Unidade VI – Lynx: trilha-mobile/unidade-6.md
+      - Desafios Práticos: trilha-mobile/desafio.md
