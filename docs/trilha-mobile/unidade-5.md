@@ -12,10 +12,8 @@ Aprender a conectar o app mobile com APIs externas utilizando `fetch` e a biblio
 
 **Links:**
 
-- 🎥 [Vídeo: Consumindo API REST com React Native (Sujeito Programador)](https://www.youtube.com/watch?v=7L2pGfZ1XfQ)
-- 🎥 [Vídeo: Axios no React Native — Requisições HTTP (OneBitCode)](https://www.youtube.com/watch?v=bjTsxPLDzNM)
-- 🎥 [Vídeo: Fetch API vs Axios — Qual usar? (Rocketseat)](https://www.youtube.com/watch?v=IqyjRq8IF4Y)
-- 🎥 [Vídeo: Consumindo APIs com React Native na prática (Matheus Battisti)](https://www.youtube.com/watch?v=V5pMSTGtyiY)
+- 🎥 [Vídeo: Consumindo APIs no React com Axios — Passo a Passo para Iniciantes (Hashtag Dev)](https://www.youtube.com/watch?v=aspjB87OWnw)
+- 🎥 [Vídeo: React Native — Consumindo API de CEP com Axios (Stack Mobile)](https://www.youtube.com/watch?v=wyT2GaU2zLg)
 
 ---
 
@@ -25,9 +23,9 @@ Aprender a construir formulários com validação de campos utilizando bibliotec
 
 **Links:**
 
-- 🎥 [Vídeo: Formulários com React Hook Form no React Native (Rocketseat)](https://www.youtube.com/watch?v=5l5ISYGP93o)
-- 🎥 [Vídeo: Validação de formulários com Yup (Sujeito Programador)](https://www.youtube.com/watch?v=gUsVnPCqIEA)
-- 🎥 [Vídeo: React Hook Form + Zod — Validação completa (Rocketseat)](https://www.youtube.com/watch?v=XSbMSSdGSdg)
+- 🎥 [Vídeo: Formulário no React Native com React Hook Form e Zod (Coffstack)](https://www.youtube.com/watch?v=mUM68dd0gIs)
+- 🎥 [Vídeo: A melhor forma de criar formulários no React com Hook Form e Zod (Rocketseat)](https://www.youtube.com/watch?v=DA39qCGt6RE)
+- 🎥 [Vídeo: Formulários avançados no React com Hook Form e Zod (Rocketseat)](https://www.youtube.com/watch?v=XSbMSSdGSdg)
 
 ---
 
@@ -37,9 +35,10 @@ Aprender a acessar funcionalidades nativas do dispositivo como câmera, geolocal
 
 **Links:**
 
-- 🎥 [Vídeo: Acessando câmera e galeria com Expo (Sujeito Programador)](https://www.youtube.com/watch?v=Y0k2O6dqDSs)
-- 🎥 [Vídeo: Geolocalização no React Native com Expo Location (Rocketseat)](https://www.youtube.com/watch?v=bgH8e1ynVJM)
-- 🎥 [Vídeo: Push Notifications com Expo (Sujeito Programador)](https://www.youtube.com/watch?v=n0hsekS0Cjc)
+- 🎥 [Vídeo: Manipulando a câmera — React Native + Expo (Sujeito Programador)](https://www.youtube.com/watch?v=h8ukVeuzHEY)
+- 🎥 [Vídeo: Manipulando localização no maps em TEMPO REAL com React Native (Rocketseat)](https://www.youtube.com/watch?v=7DY1tHHudtM)
+- 🎥 [Vídeo: Como colocar notificações com Expo Notification no React Native (Icode Mobile)](https://www.youtube.com/watch?v=li1gFNFFRJY)
+- 🎥 [Vídeo: Como implementar notificações com React Native | Expo Notification (Icode Mobile)](https://www.youtube.com/watch?v=HleOwBhfaac)
 
 ---
 

@@ -79,13 +79,13 @@ Cursos em vídeo e playlists para aprofundar seus conhecimentos em desenvolvimen
 
 | Recurso | Tipo | Link |
 | :--- | :--- | :--- |
-| React Native com Expo — Fundamentos (Sujeito Programador) | Playlist | [Assistir](https://www.youtube.com/playlist?list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B) |
-| Criando um App do ZERO com React Native (Rocketseat) | Curso | [Assistir](https://www.youtube.com/watch?v=k1vdmXDgMJI) |
+| Curso React Native (aprendiz) (OneBitCode) | Playlist | [Assistir](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_) |
+| React Native para Iniciantes — Primeiro App do Zero! (Coffstack) | Vídeo | [Assistir](https://www.youtube.com/watch?v=FULK2o5TRiM) |
 | JavaScript para Iniciantes (Curso em Vídeo — Guanabara) | Playlist | [Assistir](https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1) |
-| TypeScript para Iniciantes (Matheus Battisti) | Curso | [Assistir](https://www.youtube.com/watch?v=lCemyQeSCV8) |
+| TypeScript na Prática — 1 Hora (Matheus Battisti) | Curso | [Assistir](https://www.youtube.com/watch?v=lCemyQeSCV8) |
 | CS50's Mobile App Development (Harvard) | Curso (inglês) | [Assistir](https://cs50.harvard.edu/mobile/) |
 | React Native — Rocketseat Discover | Curso | [Assistir](https://www.rocketseat.com.br/discover) |
-| Lynx JS — Primeiros Passos (DevSoutinho) | Vídeo | [Assistir](https://www.youtube.com/watch?v=eGRIBnRf-jE) |
+| Lynx vs React Native: um novo concorrente! (Rodrigo Gonçalves) | Vídeo | [Assistir](https://www.youtube.com/watch?v=wAfzCxYf6fk) |
 | React Native Express | Curso interativo | [Acessar](https://www.reactnative.express/) |
 
 ---

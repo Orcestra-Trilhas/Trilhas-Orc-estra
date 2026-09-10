@@ -6,9 +6,9 @@ Implementar navegação entre múltiplas telas usando o **React Navigation** —
 
 **Links:**
 
-- 🎥 [Vídeo: React Navigation do ZERO — Stack, Tab e Drawer (Sujeito Programador)](https://www.youtube.com/watch?v=H12iFqFnaxA)
-- 🎥 [Vídeo: Navegação Completa em React Native (Rocketseat)](https://www.youtube.com/watch?v=jfVN4mia2tQ)
-- 🎥 [Vídeo: React Navigation 6 — Guia Completo (One Bit Code)](https://www.youtube.com/watch?v=d3SPzIIpBR4)
+- 🎥 [Vídeo: Melhorando a navegação do seu app com Stack, Tab e Drawer Navigator (Rocketseat)](https://www.youtube.com/watch?v=gH9Vvq6WbnA)
+- 🎥 [Vídeo: Usando Stack, Drawer e BottomTabs | React Navigation (LaboratorioDoDev)](https://www.youtube.com/watch?v=Mt_IqV5X_p8)
+- 🎥 [Vídeo: Criando Tab bar personalizada com React Navigation (Sujeito Programador)](https://www.youtube.com/watch?v=2Rno7uX0MlU)
 
 ---
 
@@ -18,9 +18,9 @@ Aprender a gerenciar o estado da aplicação utilizando os hooks nativos do Reac
 
 **Links:**
 
-- 🎥 [Vídeo: Hooks no React Native — useState, useEffect, useContext (Rocketseat)](https://www.youtube.com/watch?v=dpw9EHDh2bM)
-- 🎥 [Vídeo: useState e useEffect explicados na prática (Sujeito Programador)](https://www.youtube.com/watch?v=EiwSCEHBxE8)
-- 🎥 [Vídeo: React Hooks em 30 minutos (Matheus Battisti)](https://www.youtube.com/watch?v=UVhIMwHDS7k)
+- 🎥 [Vídeo: Aprenda useState — Simplificando os Hooks do React (Matheus Battisti - Hora de Codar)](https://www.youtube.com/watch?v=3m3UaEvQkhQ)
+- 🎥 [Vídeo: Aprenda useEffect — Simplificando os Hooks do React (Matheus Battisti - Hora de Codar)](https://www.youtube.com/watch?v=ojzuilNld1s)
+- 🎥 [Vídeo: Aprenda React Hook useEffect em 12 minutos (DevClub)](https://www.youtube.com/watch?v=JFGnhkKwZ2M)
 
 ---
 
@@ -30,9 +30,9 @@ Aprender a compartilhar estado entre múltiplos componentes e telas sem "prop dr
 
 **Links:**
 
-- 🎥 [Vídeo: Context API no React Native — Estado Global (Sujeito Programador)](https://www.youtube.com/watch?v=gzmhGBiv-uo)
-- 🎥 [Vídeo: useContext e useReducer explicados (Rocketseat)](https://www.youtube.com/watch?v=kCpQ1vhqyBc)
-- 🎥 [Vídeo: Context API do ZERO — Compartilhando Estado (Matheus Battisti)](https://www.youtube.com/watch?v=OuW5gHE8MkM)
+- 🎥 [Vídeo: Como Usar a Context API — Gerenciamento Global de Estado no React (Nicolas Teófilo)](https://www.youtube.com/watch?v=yAklsoMgELQ)
+- 🎥 [Vídeo: Gerenciando estados com React Context API (Kevin Uehara)](https://www.youtube.com/watch?v=E5M3hCiaUdQ)
+- 🎥 [Vídeo: Como criar Toasts no React Native usando a Context API (Just Dev It)](https://www.youtube.com/watch?v=YVlQxTEhE68)
 
 ---
 
@@ -42,8 +42,9 @@ Aprender a salvar dados localmente no dispositivo para que informações sobrevi
 
 **Links:**
 
-- 🎥 [Vídeo: AsyncStorage no React Native — Salvando dados localmente (Sujeito Programador)](https://www.youtube.com/watch?v=sxaIyJl5TYc)
-- 🎥 [Vídeo: Persistência de dados com AsyncStorage (Rocketseat)](https://www.youtube.com/watch?v=Yzch00vJqEg)
+- 🎥 [Vídeo: AsyncStorage — Salvando dados no Device com React Native (Silvio Sampaio | Finalmente DEV)](https://www.youtube.com/watch?v=azNs2toGvmY)
+- 🎥 [Vídeo: Como salvar dados no AsyncStorage no React Native (Lucas Souza Dev)](https://www.youtube.com/watch?v=2lD2Vef4aOE)
+- 🎥 [Vídeo: O melhor jeito de armazenar dados locais? (Rocketseat)](https://www.youtube.com/watch?v=ZSzEf7-6EsA)
 
 ---
 

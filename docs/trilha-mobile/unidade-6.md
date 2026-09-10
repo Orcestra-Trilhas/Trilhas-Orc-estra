@@ -21,9 +21,9 @@ Entender o que é o Lynx, como ele se diferencia de outros frameworks mobile, su
 **Links:**
 
 - 🌐 [Lynx — Site Oficial](https://lynxjs.org/)
-- 🎥 [Vídeo: Lynx JS — O Novo Framework Mobile da ByteDance (Filipe Deschamps)](https://www.youtube.com/watch?v=CLkCKR-NRyY)
-- 🎥 [Vídeo: Lynx — O framework que promete substituir React Native? (Lucas Montano)](https://www.youtube.com/watch?v=jPQaSQhR4EE)
-- 🎥 [Vídeo: LynxJS — Primeiras impressões e review (Rocketseat)](https://www.youtube.com/watch?v=Tx2VUGqFDds)
+- 🎥 [Vídeo: Lynx vs React Native: um novo concorrente! (Rodrigo Gonçalves)](https://www.youtube.com/watch?v=wAfzCxYf6fk)
+- 🎥 [Vídeo: Lynx vs React Native: O Novo Rival Chegou? (Coffstack)](https://www.youtube.com/watch?v=t58cUZbeS_I)
+- 🎥 [Vídeo: TikTok just released its React Native killer… (Fireship)](https://www.youtube.com/watch?v=-qjE8JkIVoQ)
 
 ---
 
@@ -60,8 +60,8 @@ Instalar e configurar o ambiente de desenvolvimento para projetos Lynx.
 
 **Links:**
 
-- 🎥 [Vídeo: Primeiros Passos com Lynx (DevSoutinho — Mario Souto)](https://www.youtube.com/watch?v=eGRIBnRf-jE)
-- 🎥 [Vídeo: Configurando projeto Lynx do ZERO (Felipe Motta)](https://www.youtube.com/watch?v=pRxVP_Y_bvk)
+- 🎥 [Vídeo: Lynx: TikTok’s Blazing Fast Framework – The Next React Native Killer? (Better Stack)](https://www.youtube.com/watch?v=dtvbEiLy1xg)
+- 🎥 [Vídeo: I Tried TikTok’s Lynx – Is It Better Than React Native? (Code with Beto)](https://www.youtube.com/watch?v=DDmqukrpvrM)
 
 ---
 
@@ -79,8 +79,8 @@ Aprender a construir interfaces com **ReactLynx** — a camada React do Lynx que
 
 **Links:**
 
-- 🎥 [Vídeo: Construindo interfaces com ReactLynx (DevSoutinho)](https://www.youtube.com/watch?v=EF6Y3BPkXn0)
 - 🌐 [Lynx Docs: Built-in Components](https://lynxjs.org/api/elements/built-in/view.html)
+- 🎥 [Vídeo: Can Lynx JS Replace Web Development? (Tobi Mey)](https://www.youtube.com/watch?v=rb0loCzvgQg)
 
 ---
 
@@ -97,8 +97,8 @@ Aprender a gerenciar navegação entre telas e estado da aplicação no ecossist
 
 **Links:**
 
-- 🎥 [Vídeo: Navegação e estado no Lynx (DevSoutinho)](https://www.youtube.com/watch?v=H7nwCSKfRYs)
 - 🌐 [Lynx Docs: Navigating Between Pages](https://lynxjs.org/guide/navigation.html)
+- 🎥 [Vídeo: Lynx JS First Impressions... Is the Hype Legit? (Awesome)](https://www.youtube.com/watch?v=c07hWzbmsls)
 
 ---
 

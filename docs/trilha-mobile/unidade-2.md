@@ -16,8 +16,9 @@ Dominar as funcionalidades modernas do JavaScript que são amplamente utilizadas
 **Links:**
 
 - 🎥 [Curso Completo: JavaScript para Iniciantes (Curso em Vídeo — Gustavo Guanabara)](https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)
-- 🎥 [Vídeo: JavaScript ES6+ Resumido (Rocketseat)](https://www.youtube.com/watch?v=slTIJSJwQ_k)
-- 🎥 [Vídeo: Desestruturação, Spread e Rest em JS (Rocketseat)](https://www.youtube.com/watch?v=f8a-qwKC5sY)
+- 🎥 [Vídeo: TUDO que você deve estudar de JavaScript antes do React (Rocketseat)](https://www.youtube.com/watch?v=37SwqREHRGI)
+- 🎥 [Vídeo: Features do ES6, ES7 e ES8 produtivas (Rocketseat)](https://www.youtube.com/watch?v=VwAYyXZk5as)
+- 🎥 [Vídeo: Operadores Spread e Rest no JavaScript (Rincko Dev)](https://www.youtube.com/watch?v=BRSFr-EWyDA)
 
 ---
 
@@ -27,8 +28,9 @@ Entender como funciona a assincronicidade em JavaScript — essencial para consu
 
 **Links:**
 
-- 🎥 [Vídeo: Promises e Async/Await explicados (Rocketseat)](https://www.youtube.com/watch?v=PoRJizFvM7s)
-- 🎥 [Vídeo: Programação Assíncrona com JavaScript (Curso em Vídeo — Gustavo Guanabara)](https://www.youtube.com/watch?v=nOBmeld4AhA)
+- 🎥 [Vídeo: Como usar Async/Await e Promises no JavaScript (Dev Soutinho)](https://www.youtube.com/watch?v=q28lfkBd9F4)
+- 🎥 [Vídeo: Curso de JavaScript Assíncrono — Callbacks, Promises & Async/Await (Felipe Rocha • Full Stack Club)](https://www.youtube.com/watch?v=WUmAAxH9n-A)
+- 🎥 [Vídeo: Explicando o JavaScript por baixo dos panos — Event Loop e Call Stack (Mayk Brito)](https://www.youtube.com/watch?v=jdVFUznQbH0)
 
 ---
 
@@ -38,9 +40,9 @@ TypeScript é a linguagem recomendada para projetos React Native por adicionar t
 
 **Links:**
 
-- 🎥 [Curso: TypeScript para Iniciantes (Matheus Battisti)](https://www.youtube.com/watch?v=lCemyQeSCV8)
-- 🎥 [Vídeo: TypeScript em 30 minutos (Rocketseat)](https://www.youtube.com/watch?v=ppDsxbUNtNQ)
-- 🎥 [Vídeo: TypeScript — O que é e por que usar? (Filipe Deschamps)](https://www.youtube.com/watch?v=0mYq5LrQN1s)
+- 🎥 [Curso: TypeScript na Prática — Aprenda TypeScript em 1 Hora (Matheus Battisti - Hora de Codar)](https://www.youtube.com/watch?v=lCemyQeSCV8)
+- 🎥 [Vídeo: Curso de TypeScript para Completos Iniciantes (Felipe Rocha • Full Stack Club)](https://www.youtube.com/watch?v=ppDsxbUNtNQ)
+- 🎥 [Vídeo: TypeScript, o início, de forma prática | MasterClass #07 (Rocketseat)](https://www.youtube.com/watch?v=0mYq5LrQN1s)
 
 ---
 

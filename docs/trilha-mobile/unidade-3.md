@@ -16,7 +16,8 @@ Escaneie o QR Code com o app **Expo Go** no celular ou abra no emulador.
 
 **Links:**
 
-- 🎥 [Vídeo: Criando primeiro app com React Native e Expo (Rocketseat)](https://www.youtube.com/watch?v=k1vdmXDgMJI)
+- 🎥 [Vídeo: Criando primeiro app com React Native e Expo — Spotcast #01 (Dev Soutinho)](https://www.youtube.com/watch?v=k1vdmXDgMJI)
+- 🎥 [Vídeo: React Native (Expo) para Iniciantes — Seu Primeiro App do Zero! (Coffstack)](https://www.youtube.com/watch?v=FULK2o5TRiM)
 - 📖 [Tutorial Oficial Expo: Create your first app](https://docs.expo.dev/tutorial/create-your-first-app/)
 
 ---
@@ -25,9 +26,9 @@ Escaneie o QR Code com o app **Expo Go** no celular ou abra no emulador.
 
 **Links:**
 
-- 🎥 [Curso Completo: React Native com Expo — Fundamentos (Sujeito Programador)](https://www.youtube.com/playlist?list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B)
-- 🎥 [Vídeo: React Native — Componentes Fundamentais (Rocketseat)](https://www.youtube.com/watch?v=1oEhyOYuQSE)
-- 🎥 [Vídeo: FlatList e ScrollView no React Native (Sujeito Programador)](https://www.youtube.com/watch?v=k5LITZqKerc)
+- 🎥 [Playlist: Curso React Native (aprendiz) (OneBitCode)](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_)
+- 🎥 [Vídeo: FlatList no React Native da forma CORRETA (Coffstack)](https://www.youtube.com/watch?v=I3zD1ZVImrg)
+- 🎥 [Vídeo: Criando Infinite Scroll com React Native e FlatList (Sujeito Programador)](https://www.youtube.com/watch?v=TjkFGrjkXfc)
 
 ---
 
@@ -37,9 +38,8 @@ Aprender a estilizar componentes com `StyleSheet` e criar layouts responsivos co
 
 **Links:**
 
-- 🎥 [Vídeo: Estilização no React Native — Flexbox (Rocketseat)](https://www.youtube.com/watch?v=S0-JRYkHFXo)
-- 🎥 [Vídeo: StyleSheet e Flexbox na prática (Sujeito Programador)](https://www.youtube.com/watch?v=1_SRIaL8eeM)
-- 🎥 [Vídeo: Flexbox CSS em 15 minutos (Rocketseat)](https://www.youtube.com/watch?v=8VBdSKianEU)
+- 🎥 [Vídeo: FLEXBOX e RESPONSIVIDADE no REACT NATIVE (Coffstack)](https://www.youtube.com/watch?v=lwAi4PhoPkk)
+- 🎥 [Vídeo: Descomplicando o Flexbox no React Native | Master Class (dogcode)](https://www.youtube.com/watch?v=ni7ep10mtvA)
 
 ---
 

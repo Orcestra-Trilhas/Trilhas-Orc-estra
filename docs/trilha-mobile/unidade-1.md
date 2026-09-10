@@ -14,9 +14,9 @@ Entender o ecossistema mobile (Android & iOS), diferenças entre desenvolvimento
 
 **Links:**
 
-- 🎥 [Vídeo: Como funciona o Desenvolvimento Mobile? (Código Fonte TV)](https://www.youtube.com/watch?v=UaVfBHRMVkk)
-- 🎥 [Vídeo: React Native vs Flutter — Qual escolher? (Rocketseat)](https://www.youtube.com/watch?v=dMkBSp8ROX0)
-- 🎥 [Vídeo: O que é Desenvolvimento Mobile? Nativo vs Multiplataforma (Rafaella Ballerini)](https://www.youtube.com/watch?v=3dJJAB3aZbo)
+- 🎥 [Vídeo: React Native // Dicionário do Programador (Código Fonte TV)](https://www.youtube.com/watch?v=mqltv3kFdgE)
+- 🎥 [Vídeo: Desenvolvimento Nativo Vs Híbrido — Vantagens e Desvantagens (Stack Mobile)](https://www.youtube.com/watch?v=OU1QDVk4iJM)
+- 🎥 [Vídeo: Como aprender React Native: roadmap de estudos e ferramentas (Rocketseat)](https://www.youtube.com/watch?v=Vt4melgQsKs)
 
 ---
 
@@ -45,7 +45,8 @@ O **Visual Studio Code** é o editor recomendado para desenvolvimento com React 
 O **Android Studio** é necessário para rodar o emulador Android e compilar builds Android. Mesmo usando React Native, você precisará dele instalado.
 
 - 🌐 [Download Android Studio](https://developer.android.com/studio)
-- 🎥 [Vídeo: Como instalar e configurar o Android Studio (Sujeito Programador)](https://www.youtube.com/watch?v=gAd-8rFhpn0)
+- 🎥 [Vídeo: Guia Completo — Instalar o Android Studio e Configurar para React Native (CaioeduardoDev)](https://www.youtube.com/watch?v=ZtztR1QHpKU)
+- 🎥 [Vídeo: Configurar Emulador Android da Forma Correta (Stack Mobile)](https://www.youtube.com/watch?v=aYToa6zU7XE)
 
 ### Xcode (Somente macOS — Emulador iOS)
 
@@ -86,12 +87,12 @@ Instalar e configurar Node.js, o CLI do Expo e validar que o ambiente está func
     ```
 
 4. **Configurar variáveis de ambiente do Android SDK** (se usar emulador Android):
-    - 🎥 [Vídeo: Configurando ambiente React Native (Rocketseat)](https://www.youtube.com/watch?v=nWAA7VqBiGc)
+    - 🎥 [Vídeo: Como Preparar o Ambiente para React Native — Android Studio, Node e Expo (Leonardo Rocha)](https://www.youtube.com/watch?v=18iBoT00lTk)
 
 **Links Complementares:**
 
-- 🎥 [Vídeo: Configurando ambiente React Native do ZERO em 2024 (Sujeito Programador)](https://www.youtube.com/watch?v=eSjk4HFiEBA)
-- 🎥 [Vídeo: Como instalar o Expo e criar seu primeiro projeto (One Bit Code)](https://www.youtube.com/watch?v=aulGcEwMdag)
+- 🎥 [Vídeo: React Native — Guia prático e completo para começar do zero (Rodrigo Gonçalves)](https://www.youtube.com/watch?v=7uGjAMhI8G4)
+- 🎥 [Vídeo: React Native (Expo) para Iniciantes — Seu Primeiro App do Zero! (Coffstack)](https://www.youtube.com/watch?v=FULK2o5TRiM)
 
 ---
 
