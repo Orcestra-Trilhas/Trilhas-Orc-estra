@@ -62,7 +62,6 @@ O modelo agrupa essas motivações de uma forma muito estratégica para o design
 
 * **Lado Direito (Motivações Intrínsecas):** Foca em criatividade, autoexpressão e aspectos sociais. Usuários motivados por esses fatores não precisam de um objetivo ou recompensa final para usar a criatividade ou interagir com amigos, o que torna esse lado excelente para produzir engajamento de longa duração.
 
-
 * **Lado Esquerdo (Motivações Extrínsecas):** É mais associado a lógicas, cálculos e posse de bens. São motivações ótimas e claras para fazer o usuário iniciar um jogo ou atividade, porém, assim que o usuário atinge o objetivo ou ganha a recompensa, ele pode rapidamente perder o interesse.
 
 ![left-brain](assets/left-brain.png) ![right-brain](assets/right-brain.png) 
