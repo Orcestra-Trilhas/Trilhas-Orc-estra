@@ -8,6 +8,8 @@ A ntes de desenhar qualquer mecânica ou sistema de pontuação, você precisa d
 
 Nesta unidade, você irá entender que a gamificação é o uso de elementos de design característicos de jogos aplicados em contextos que não são jogos. O objetivo dessa prática é transferir as características positivas dos jogos (frequentemente descritas como "diversão") para engajar os usuários na resolução de um problema real.
 
+---
+
 ## 2. Frameworks & Conceitos
 
 ### Framework MDA
@@ -36,6 +38,7 @@ Em resumo, o modelo MDA é muito útil porque permite olhar para a gamificação
   
 * **Design Lúdico (_Playful Design_):** Consiste em adicionar elementos divertidos a uma interface ou objeto, mas carece de regras explícitas, competição ou metas específicas. Um exemplo clássico citado no texto é a "_Fail Whale_" do Twitter, uma ilustração divertida usada para informar erros de servidor e reduzir a frustração dos usuários, sem propor nenhum jogo com isso.  
 
+---
 
 ## 3. Próximo Passo
 
