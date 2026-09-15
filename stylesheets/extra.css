@@ -1,0 +1,228 @@
+/* Importação de fontes limpas e modernas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+  /* Cores Principais do Manual da Marca Orc'estra */
+  --md-primary-fg-color:        #2EB600;
+  --md-primary-fg-color--light:  #3FCC10;
+  --md-primary-fg-color--dark:   #003D0D;
+  --md-primary-bg-color:        #FFFFFF;
+  --md-accent-fg-color:         #3FCC10;
+  --md-accent-bg-color:         #FFFBDC;
+
+  /* Tipografia */
+  --md-text-font: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --md-code-font: 'Roboto Mono', monospace;
+}
+
+/* Modo Escuro */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #2EB600;
+  --md-primary-fg-color--light:  #3FCC10;
+  --md-primary-fg-color--dark:   #01571E;
+  --md-accent-fg-color:         #3FCC10;
+}
+
+/* Cor da Seleção de Texto da Marca Orc'estra */
+::selection {
+  background-color: rgba(46, 182, 0, 0.25) !important;
+  color: inherit;
+}
+
+/* Tipografia de Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: 700;
+  color: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="slate"] h1,
+[data-md-color-scheme="slate"] h2,
+[data-md-color-scheme="slate"] h3 {
+  color: #FFFFFF;
+}
+
+/* Links no Corpo do Texto */
+.md-typeset a:not(.md-button):not(.trilha-card) {
+  color: var(--md-primary-fg-color);
+  font-weight: 500;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+.md-typeset a:not(.md-button):not(.trilha-card):hover {
+  color: var(--md-primary-fg-color--light);
+  text-decoration: underline solid;
+}
+
+/* Caixas de Alerta (Admonitions) com Cantos Arredondados */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-size: inherit !important;
+  line-height: 1.6;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  font-size: inherit !important;
+  font-weight: 700;
+}
+
+/* Blocos de Código com Cantos Arredondados e Copiar Destaque */
+.md-typeset pre > code {
+  border-radius: 8px !important;
+}
+
+.md-typeset .highlight {
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.md-typeset .md-clipboard:hover {
+  color: var(--md-primary-fg-color--light) !important;
+}
+
+/* Grid de Cards */
+.trilhas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.trilha-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  background-color: #FFFFFF;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+[data-md-color-scheme="slate"] .trilha-card {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+.trilha-card:hover {
+  transform: translateY(-2px);
+  border-color: #2EB600;
+  box-shadow: 0 4px 12px rgba(46, 182, 0, 0.12);
+}
+
+.trilha-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.trilha-card p {
+  font-size: 0.88rem;
+  color: #64748B;
+  margin-bottom: 0.8rem;
+}
+
+[data-md-color-scheme="slate"] .trilha-card p {
+  color: #94A3B8;
+}
+
+/* Estilo elegante para a chamada da setinha nos Cards */
+.trilha-card-link {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.trilha-card:hover .trilha-card-link {
+  transform: translateX(4px);
+  color: var(--md-primary-fg-color--light);
+}
+
+/* Estilo Elegante, Espaçado e Centralizado para Tabelas */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: rgba(46, 182, 0, 0.08);
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  padding: 0.9rem 1.1rem;
+  vertical-align: middle;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.9rem 1.1rem;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+.md-typeset table:not([class]) th:first-child,
+.md-typeset table:not([class]) td:first-child {
+  text-align: center;
+}
+
+/* Estilo do Cabeçalho e Navegação */
+.md-header {
+  background-color: #003D0D;
+}
+
+.md-tabs {
+  background-color: #01571E;
+}
+
+/* Delimitação Clara e Elegante das Abas do Topo (Opção A - Cápsula) */
+.md-tabs__item {
+  padding: 0.35rem 0;
+}
+
+.md-tabs__link {
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 6px;
+  margin: 0 0.2rem;
+  transition: all 0.2s ease !important;
+}
+
+.md-tabs__link:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active {
+  background-color: rgba(46, 182, 0, 0.4) !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* Botões Primários */
+.md-button--primary {
+  background-color: #2EB600 !important;
+  color: #FFFFFF !important;
+  border-color: #2EB600 !important;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+
+.md-button--primary:hover {
+  background-color: #3FCC10 !important;
+  border-color: #3FCC10 !important;
+}
