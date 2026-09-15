@@ -14,30 +14,29 @@ O objetivo é oferecer um caminho de aprendizado direcionado e eficiente, levand
 
 <div class="trilhas-grid">
   <a href="unidade-1/" class="trilha-card">
-    <h3>Unidade I – Fundamentos & Ambiente</h3>
-    <p>Introdução a UX/UI, interface do Figma, login Pro UnB, grids, estilos e plugins essenciais.</p>
+    <h3>Unidade I – Fundamentos, Interface & Layout Base</h3>
+    <p>Introdução a UX/UI, navegação no Figma, grids, estilos, mídias e Auto Layout inicial.</p>
     <span class="trilha-card-link">Acessar Unidade ➔</span>
   </a>
 
   <a href="unidade-2/" class="trilha-card">
-    <h3>Unidade II – Auto Layout & Responsividade</h3>
-    <p>Flexbox no Figma, Frames vs Groups e construção de cards responsivos com Auto Layout.</p>
+    <h3>Unidade II – Componentização, Variáveis & Design System</h3>
+    <p>Componentes reutilizáveis, variantes, design tokens (Variables) e Light/Dark Mode.</p>
     <span class="trilha-card-link">Acessar Unidade ➔</span>
   </a>
 
   <a href="unidade-3/" class="trilha-card">
-    <h3>Unidade III – Componentização & Design System</h3>
-    <p>Criação de componentes reutilizáveis, gerenciamento de variantes e organização de estados.</p>
+    <h3>Unidade III – Sistemas Complexos, Responsividade & Dev Mode</h3>
+    <p>Layouts multitela (Desktop/Mobile), interações de busca e handoff via Dev Mode.</p>
     <span class="trilha-card-link">Acessar Unidade ➔</span>
   </a>
 
   <a href="unidade-4/" class="trilha-card">
-    <h3>Unidade IV – Prototipagem & Dev Mode</h3>
-    <p>Protótipos navegáveis, Smart Animate, constraints responsivas, Figma Dev Mode e cursos extras.</p>
+    <h3>Unidade IV – Arquitetura de Informação & Recursos Extras</h3>
+    <p>User Flow no FigJam, prototipagem avançada, inspeção e cursos extras recomendados.</p>
     <span class="trilha-card-link">Acessar Unidade ➔</span>
   </a>
 </div>
-
 ---
 
 ## Central de Projetos Práticos
