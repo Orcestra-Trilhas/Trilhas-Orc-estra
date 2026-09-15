@@ -12,7 +12,9 @@ Ao final, você será capaz de construir Controllers REST completos, seguindo as
 
 ---
 
-## 2. Como uma Requisição Chega ao Controller
+## 2. Fundamentos do Spring Web
+
+### 9.1 Como uma Requisição Chega ao Controller
 
 Antes das anotações, vale entender o caminho que uma requisição percorre dentro do Spring Web:
 
@@ -22,9 +24,7 @@ Antes das anotações, vale entender o caminho que uma requisição percorre den
 
 Esse fluxo (`Requisição → DispatcherServlet → Handler Mapping → Controller → HttpMessageConverter → Resposta`) acontece automaticamente com o Spring Boot — você só precisa declarar os Controllers.
 
----
-
-## 3. Criando um Controller REST
+### 9.2 Criando um Controller REST
 
 - **`@RestController`**: combina `@Controller` (marca a classe como um Bean gerenciado pelo Spring, apto a receber requisições) com `@ResponseBody` (indica que o retorno de cada método deve ser escrito diretamente no corpo da resposta, já serializado como JSON, em vez de resolver para uma view HTML).
 - **`@RequestMapping("/tarefas")`**: define um prefixo de rota para todos os métodos da classe (opcional, mas comum para organizar por recurso).
@@ -37,9 +37,8 @@ public class TarefaController {
 }
 ```
 
----
 
-## 4. Mapeando Rotas por Verbo HTTP
+### 9.3 Mapeando Rotas por Verbo HTTP
 
 Cada verbo HTTP (visto na Unidade V) tem sua anotação correspondente, todas variações especializadas de `@RequestMapping`:
 
@@ -53,9 +52,8 @@ Cada verbo HTTP (visto na Unidade V) tem sua anotação correspondente, todas va
 
 Cada uma delas é usada no método do Controller que deve tratar aquele verbo + rota específicos.
 
----
 
-## 5. Extraindo Dados da Requisição
+### 9.4 Extraindo Dados da Requisição
 
 O Spring Web oferece anotações para extrair, automaticamente, cada parte de uma requisição HTTP (revistas na Unidade V) direto como parâmetro do método:
 
@@ -75,9 +73,8 @@ public Tarefa criar(@RequestBody Tarefa novaTarefa) { ... }
 public Tarefa buscarPorId(@PathVariable Long id) { ... }
 ```
 
----
 
-## 6. Formatando a Resposta: `ResponseEntity`
+### 9.5 Formatando a Resposta: `ResponseEntity`
 
 Retornar o objeto diretamente (como nos exemplos acima) funciona, mas sempre devolve `200 OK`. Para controlar explicitamente o **status code** (visto na Unidade V) e os headers da resposta, usa-se `ResponseEntity<T>`:
 
@@ -98,9 +95,8 @@ public ResponseEntity<Tarefa> buscarPorId(@PathVariable Long id) {
 
 Isso permite, por exemplo, devolver `201 Created` em um cadastro bem-sucedido, ou `404 Not Found` quando um recurso não existe — em vez de sempre `200`.
 
----
 
-## 7. Validação de Dados (`@Valid`)
+### 9.6 Validação de Dados (`@Valid`)
 
 Para garantir que os dados recebidos no `@RequestBody` são válidos antes de chegarem à lógica de negócio, combina-se o **Bean Validation** (anotações como `@NotBlank`, `@NotNull`, `@Size`, `@Email` na própria classe/DTO) com `@Valid` no parâmetro do Controller:
 
@@ -118,7 +114,7 @@ Se a validação falhar, o Spring lança automaticamente uma `MethodArgumentNotV
 
 ---
 
-## 8. Tratamento Centralizado de Erros
+### 9.7 Tratamento Centralizado de Erros
 
 Em vez de tratar exceções manualmente dentro de cada método do Controller (com `try/catch` repetido), o Spring Web permite centralizar esse tratamento:
 
@@ -145,13 +141,13 @@ Isso evita repetir lógica de tratamento de erro em cada Controller e padroniza 
 
 ---
 
-## 9. Conteúdo em Vídeo
+## 3. Conteúdo em Vídeo
 
 - 🎥 [Vídeo: Spring Web / Spring MVC na prática](https://www.youtube.com/watch?v=YuzWGKSzEcE&t=2707s&pp=ygUJc291emEgZGV2)
 
 ---
 
-## 10. Projeto Prático
+## 4. Projeto Prático
 
 Implemente os endpoints REST completos (rotas, validação e tratamento de erros) do **Gerenciador de Tarefas**:
 

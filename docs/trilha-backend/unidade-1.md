@@ -12,7 +12,7 @@ Nesta unidade, você irá escolher e instalar a IDE (Integrated Development Envi
 
 ## 2. Ferramentas & IDEs
 
-### IntelliJ IDEA (Recomendado)
+### 1.1 IntelliJ IDEA (Recomendado)
 O **IntelliJ IDEA (Community Edition)** é o padrão de mercado para desenvolvimento Java. Ele oferece o melhor suporte a autocompletar, refatoração automática, geração de código e integração nativa com Spring Boot.
 
 #### Windows
@@ -23,14 +23,14 @@ O **IntelliJ IDEA (Community Edition)** é o padrão de mercado para desenvolvim
 
 - [Vídeo da Instalação](https://www.youtube.com/watch?v=YKHM_DUOV0k)
 
-### VS Code (Opção Leve)
+### 1.2 VS Code (Opção Leve)
 Se você já utiliza o **Visual Studio Code**, pode utilizá-lo instalando o pacote oficial de extensões Java da Microsoft.
 
 Se você ainda não tem o VS Code instalado, segue o vídeo para te ajudar na instalação
 
 - [Vídeo: Instalação do Java no Windows e configuração no VS Code](https://www.youtube.com/watch?v=7d4KjemMQpk)
 
-### Instalando o JDK no Linux
+### 1.3 Instalando o JDK no Linux
 
 Independentemente da IDE escolhida, você precisa ter o JDK instalado no sistema. Abaixo estão os comandos para instalar o OpenJDK nas distribuições mais comuns (o exemplo usa a versão 21, mas você pode ajustar o número conforme a versão desejada):
 

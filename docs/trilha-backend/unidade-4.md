@@ -19,11 +19,11 @@ Nesta unidade, você aprenderá a modelar bancos de dados nos níveis conceitual
 
 ## 3. Modelagem de Dados
 
-### 3.1 Modelo Conceitual
+### 4.1 Modelo Conceitual
 
 É a etapa mais abstrata da modelagem, focada em **entender o problema do negócio**, sem se preocupar com tecnologia. Aqui você identifica as principais **entidades** (ex.: `Usuário`, `Tarefa`) e como elas se relacionam entre si, geralmente representadas em um **DER (Diagrama Entidade-Relacionamento)**.
 
-### 3.2 Modelo Lógico
+### 4.2 Modelo Lógico
 
 Refina o modelo conceitual definindo **atributos, chaves primárias (PK) e chaves estrangeiras (FK)**, além das **cardinalidades** entre entidades:
 
@@ -33,7 +33,7 @@ Refina o modelo conceitual definindo **atributos, chaves primárias (PK) e chave
 
 Ainda é independente do banco de dados específico que será usado (PostgreSQL, MySQL, etc.).
 
-### 3.3 Modelo Físico
+### 4.3 Modelo Físico
 
 É a etapa final, onde o modelo lógico é traduzido para a **sintaxe real do SGBD escolhido** — tipos de dados específicos (`VARCHAR`, `SERIAL`, etc.), constraints, índices e o próprio script `CREATE TABLE`. É o modelo pronto para ser executado no banco de dados.
 

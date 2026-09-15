@@ -14,26 +14,26 @@ Nesta unidade, você entenderá os conceitos centrais do Spring Framework (Inver
 
 O **Spring Framework** é, na essência, um framework de **injeção de dependência**: ele existe para gerenciar a criação e o ciclo de vida dos objetos da sua aplicação, para que você não precise fazer isso manualmente com `new` espalhado pelo código.
 
-### 2.1 Inversão de Controle (IoC)
+### 6.1 Inversão de Controle (IoC)
 
 Tradicionalmente, é a sua classe quem decide *quando* e *como* criar os objetos de que depende (ex.: um `TarefaService` fazendo `new TarefaRepository()` dentro dele mesmo). Com **Inversão de Controle**, essa responsabilidade é invertida: quem cria e gerencia os objetos passa a ser o **framework**, não a sua classe. Sua classe apenas *declara* do que precisa, e o Spring se encarrega de fornecer.
 
-### 2.2 Injeção de Dependência (DI)
+### 6.2 Injeção de Dependência (DI)
 
 É o **mecanismo** pelo qual a Inversão de Controle acontece na prática: o Spring "injeta" as dependências que uma classe precisa, em vez dela criá-las sozinha. As formas mais comuns são:
 
 - **Injeção via construtor** (recomendada): as dependências são passadas como parâmetros do construtor.
 - **Injeção via campo** (`@Autowired` direto no atributo): mais simples de escrever, porém menos recomendada (dificulta testes e deixa dependências implícitas).
 
-### 2.3 Beans
+### 6.3 Beans
 
 Um **Bean** é qualquer objeto cujo ciclo de vida (criação, configuração e destruição) é **gerenciado pelo Spring**, em vez de gerenciado manualmente por você. Uma classe se torna candidata a Bean ao ser anotada com estereótipos como `@Component`, `@Service`, `@Repository` ou `@Controller`, ou ao ser declarada manualmente em uma classe de configuração com `@Bean`.
 
-### 2.4 Componentes (Component Scanning)
+### 6.4 Componentes (Component Scanning)
 
 O Spring localiza automaticamente as classes que devem virar Beans através do **Component Scanning** — ele varre os pacotes do projeto em busca de classes anotadas com `@Component` (e suas especializações `@Service`, `@Repository`, `@Controller`), registrando-as automaticamente sem precisar de configuração manual em XML.
 
-### 2.5 Contexto de Aplicação (ApplicationContext)
+### 6.5 Contexto de Aplicação (ApplicationContext)
 
 O **`ApplicationContext`** é o "container" central do Spring: é ele quem efetivamente instancia, configura e armazena todos os Beans da aplicação, e é dele que os Beans são retirados (injetados) sempre que uma classe declara precisar de uma dependência. Pode-se pensar nele como o registro vivo de tudo que o Spring está gerenciando durante a execução da aplicação.
 
@@ -43,7 +43,7 @@ O **`ApplicationContext`** é o "container" central do Spring: é ele quem efeti
 
 O **Spring Boot** não é um framework diferente do Spring — é uma camada construída **em cima** do Spring Framework, com foco em reduzir configuração manual e acelerar o início de um projeto. Os conceitos de IoC, DI, Beans e Contexto continuam sendo exatamente os mesmos da seção 2 — o Spring Boot só automatiza a forma de configurá-los, através dos três pilares abaixo.
 
-### 3.1 Starters
+### 6.6 Starters
 
 Um **Starter** é um "pacote de dependências" pré-configurado para um propósito específico — em vez de você descobrir manualmente quais bibliotecas são compatíveis entre si para, por exemplo, construir uma API web, você adiciona uma única dependência (ex.: `spring-boot-starter-web`) e ela já traz tudo que é necessário (Spring MVC, Jackson para JSON, Tomcat embutido, etc.), com versões testadas e compatíveis entre si.
 
@@ -55,7 +55,7 @@ Alguns starters comuns:
 
 Isso resolve um problema real do Spring "clássico": antes dos starters, era comum ter conflitos de versão entre bibliotecas (o famoso "dependency hell"), já que cada uma precisava ser adicionada e versionada manualmente.
 
-### 3.2 Auto-Configuração (Auto-Configuration)
+### 6.7 Auto-Configuração (Auto-Configuration)
 
 É o mecanismo pelo qual o Spring Boot **configura Beans automaticamente**, com base no que ele encontra no classpath do seu projeto. Funciona assim, na prática:
 
@@ -65,7 +65,7 @@ Isso resolve um problema real do Spring "clássico": antes dos starters, era com
 
 Na prática, é a auto-configuração que permite você simplesmente adicionar `spring-boot-starter-data-jpa` + o driver do H2 e já ter um banco funcionando, sem escrever uma linha de configuração de `DataSource`.
 
-### 3.3 Servidores Embutidos (Embedded Servers)
+### 6.8 Servidores Embutidos (Embedded Servers)
 
 Tradicionalmente, uma aplicação Java web precisava ser empacotada como `.war` e implantada manualmente em um servidor externo (como um Tomcat instalado à parte na máquina/servidor). O Spring Boot inverte essa lógica: o servidor web (por padrão, o **Tomcat**, mas também é possível usar **Jetty** ou **Undertow**) vem **embutido dentro do próprio `.jar`** da aplicação.
 

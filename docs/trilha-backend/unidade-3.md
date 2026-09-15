@@ -12,7 +12,7 @@ Ao final desta unidade, você será capaz de manipular coleções de forma efici
 
 ## 2. Tópicos Abordados
 
-### 2.1 Collections (`List`, `Set`, `Map`)
+### 3.1 Collections (`List`, `Set`, `Map`)
 
 O Java organiza suas estruturas de dados em torno de três interfaces principais do pacote `java.util`, cada uma com uma regra diferente sobre como os elementos se comportam:
 
@@ -36,7 +36,7 @@ Além dessas, existe a interface **`Queue`** (e sua extensão `Deque`), usada pa
 
 ---
 
-### 2.2 Stream API
+### 3.2 Stream API
 
 A Stream API é um conjunto de recursos que facilita a **manipulação de estruturas de dados** de forma funcional e declarativa, ou seja, você descreve *o que* quer fazer com os dados, sem escrever manualmente o *como* (loops, contadores, condicionais aninhadas).
 
@@ -63,7 +63,7 @@ São operações que transformam a stream e retornam **outra stream**, permitind
 
 ---
 
-### 2.3 Generics
+### 3.3 Generics
 
 Generics permitem que classes, interfaces e métodos operem sobre **tipos parametrizados** (`<T>`, `<E>`, `<K, V>`), definidos apenas no momento do uso, em vez de fixados na implementação.
 
@@ -75,7 +75,7 @@ Exemplo: `List<String> nomes = new ArrayList<>();` garante, em tempo de compila�
 
 ---
 
-### 2.4 Packages
+### 3.4 Packages
 
 Packages são o mecanismo do Java para **organizar classes em uma estrutura hierárquica de pastas/namespaces**, geralmente seguindo o padrão de domínio invertido (ex.: `com.empresa.projeto.modulo`).
 
@@ -85,7 +85,7 @@ Além de organizar o código, packages resolvem **conflitos de nomes** (duas cla
 
 ---
 
-### 2.5 Records
+### 3.5 Records
 
 Records, introduzidos como recurso estável a partir do Java 16, são um tipo especial de classe pensado para representar **dados imutáveis** de forma concisa.
 

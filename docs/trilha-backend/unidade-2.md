@@ -10,7 +10,9 @@ Nesta unidade, você aprenderá conceitos essenciais como classes, objetos, atri
 
 ---
 
-## 2. Fundamentos: Classes e Objetos
+## 2 Fundamentos
+
+### 2.1 Classes e Objetos
 
 Toda classe em Java define a estrutura (atributos) e o comportamento (métodos) de um objeto. O construtor é o método especial responsável por inicializar esses atributos quando um novo objeto é criado.
 
@@ -22,7 +24,7 @@ Toda classe em Java define a estrutura (atributos) e o comportamento (métodos) 
 
 ## 3. Os 4 Pilares da POO
 
-### 3.1 Encapsulamento
+### 2.2 Encapsulamento
 
 Consiste em proteger os atributos de uma classe, tornando-os privados (`private`) e controlando o acesso a eles por meio de métodos públicos (`getters` e `setters`). Isso evita que outras partes do código alterem o estado do objeto de forma indevida.
 
@@ -34,7 +36,7 @@ Consiste em proteger os atributos de uma classe, tornando-os privados (`private`
   - [Encapsulamento](https://youtu.be/1wYRGFXpVlg?si=yW0N3s9eCFgEMaji)
   - [Encapsulamento em Java](https://youtu.be/x4JfzV0Wb5w?si=OsMT9SB7hbl_nt6E)
 
-### 3.2 Herança
+### 2.3 Herança
 
 Permite que uma classe (subclasse) reaproveite atributos e métodos de outra classe (superclasse), usando a palavra-chave `extends`. É útil para modelar relações do tipo "é um" (ex.: `Cachorro` é um `Animal`).
 
@@ -47,7 +49,7 @@ Permite que uma classe (subclasse) reaproveite atributos e métodos de outra cla
   - [Herança (parte 3)](https://youtu.be/He887D2WGVw?si=76U7yfUv6y9p1bh-)
   - [Herança (parte 4)](https://youtu.be/5pwV2WdD-_Y?si=Pf2PDPbF0LMQZ80g)
 
-### 3.3 Polimorfismo
+### 2.4 Polimorfismo
 
 Permite que um mesmo método se comporte de forma diferente dependendo do objeto que o executa. Pode acontecer por **sobrescrita** (`@Override`, quando a subclasse redefine um método da superclasse) ou por **sobrecarga** (métodos com mesmo nome, mas parâmetros diferentes).
 
@@ -57,7 +59,7 @@ Permite que um mesmo método se comporte de forma diferente dependendo do objeto
   - [Polimorfismo de Sobrecarga](https://youtu.be/hYek1xqWzgs?si=TspNufSJvVJCTkTJ)
   - [Aplicação do Polimorfismo por Sobrecarga](https://youtu.be/b7xGYh3NHZU?si=rtRBqap3h3Q-5F9u)
 
-### 3.4 Abstração
+### 2.5 Abstração
 
 Foca em expor apenas o essencial de um objeto, escondendo detalhes de implementação. Em Java, isso é feito com **classes abstratas** (`abstract`) e **interfaces**, que definem "o quê" uma classe deve fazer, sem necessariamente dizer "como".
 
@@ -69,7 +71,7 @@ Foca em expor apenas o essencial de um objeto, escondendo detalhes de implementa
   - [Implementando Múltiplas Interfaces](https://youtu.be/QKjFkaagGdk?si=7ocDnsxGuk9cUnnK)
   - [Atributos e Métodos Estáticos](https://youtu.be/SYyEyR78dSQ?si=DfbTwZIVl2WVXU_D)
 
-### Extras
+### 2.6 Extras
 
 - [Modificador `static`](https://youtu.be/WBBbsEdzzmA?si=h8nyBbEC0DNipjW7)
 - [Métodos Estáticos](https://youtu.be/jowlUssbJmk?si=KFPoy1j8zAED4RE0)
