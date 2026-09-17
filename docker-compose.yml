@@ -1,0 +1,10 @@
+services:
+  docs:
+    image: python:3.11-slim
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: >
+      bash -c "pip install --no-cache-dir -r requirements.txt && mkdocs serve -a 0.0.0.0:8000"
