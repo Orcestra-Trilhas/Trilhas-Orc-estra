@@ -6,7 +6,7 @@ Esta página contém o **Projeto Final obrigatório** da Trilha de Mobile. Os ex
 
 ---
 
-## 🏆 Projeto Final (Obrigatório)
+## 🏆 Projeto Final
 
 ### Objetivo
 

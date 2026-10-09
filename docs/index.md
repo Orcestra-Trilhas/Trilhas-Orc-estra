@@ -50,4 +50,11 @@ Bem-vindo ao portal oficial de capacitação da **Orc’estra Gamificação**. C
     </div>
   </a>
 
+  <a href="trilha-embarcados/" class="trilha-card">
+    <div>
+      <h3>Eletrônica & Embarcados</h3>
+      <p>Capacitação em circuitos, ESP32, Raspberry Pi Pico 2W, MicroPython, IoT, Wokwi e PCB no KiCad.</p>
+    </div>
+  </a>
+
 </div>

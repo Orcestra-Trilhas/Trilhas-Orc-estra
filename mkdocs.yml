@@ -111,3 +111,12 @@ nav:
       - Unidade V – React Native APIs & Recursos Nativos: trilha-mobile/unidade-5.md
       - Unidade VI – Lynx: trilha-mobile/unidade-6.md
       - Desafios Práticos: trilha-mobile/desafio.md
+  - Eletrônica & Embarcados:
+      - Visão Geral: trilha-embarcados/index.md
+      - Unidade I – Fundamentos & Instrumentação: trilha-embarcados/unidade-1.md
+      - Unidade II – ESP32 & Raspberry Pi Pico 2W: trilha-embarcados/unidade-2.md
+      - Unidade III – Programação MicroPython & Setup: trilha-embarcados/unidade-3.md
+      - Unidade IV – GPIOs, Sensores & Atuadores: trilha-embarcados/unidade-4.md
+      - Unidade V – Protocolos & IoT: trilha-embarcados/unidade-5.md
+      - Unidade VI – PCB no KiCad: trilha-embarcados/unidade-6.md
+      - Desafios Práticos: trilha-embarcados/desafio.md
