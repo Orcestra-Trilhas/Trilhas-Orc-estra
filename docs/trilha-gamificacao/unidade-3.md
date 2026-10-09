@@ -84,6 +84,12 @@ Além de mapear a lógica e a criatividade, o modelo Octalysis também divide os
 
 ---
 
-## 3. Próximo Passo
+## 3. Desafio
+
+[Análise de Players](/trilha-gamificacao/desafio/#unidade-iii-analise-de-players){.md-button .md-button--primary}
+
+---
+
+## 4. Próximo Passo
 
 Com o perfil dos seus jogadores mapeado e as principais motivações psicológicas compreendidas, avance para a **Unidade IV** para começar a colocar a mão na massa, definindo o tema, a narrativa e construindo a jornada interativa do seu sistema.

@@ -40,6 +40,12 @@ Em resumo, o modelo MDA é muito útil porque permite olhar para a gamificação
 
 ---
 
-## 3. Próximo Passo
+## 3. Desafio
+
+[Fundação do PGG](/trilha-gamificacao/desafio/#unidade-i-fundacao-do-pgg){.md-button .md-button--primary}
+
+---
+
+## 4. Próximo Passo
 
 Com os fundamentos da gamificação compreendidos e o ambiente mental preparado, avance para a Unidade II para aprender como investigar a causa raiz do seu problema de engajamento, mapear o contexto e definir as métricas de sucesso do seu projeto.
