@@ -36,7 +36,13 @@ Junto com a análise minuciosa do contexto corporativo, é fundamental que haja 
 
 ---
 
-## 3. Próximo Passo
+## 3. Desafio
+
+[Diagnóstico do Problema e Objetivos](/trilha-gamificacao/desafio/#unidade-ii-diagnostico-do-problema-e-objetivos){.md-button .md-button--primary}
+
+---
+
+## 4. Próximo Passo
 
 Com o problema raiz devidamente identificado e as métricas de sucesso estabelecidas, avance para a **Unidade III** para conhecer o seu público-alvo, aprendendo a mapear os perfis de jogadores e suas motivações psicológicas.
 

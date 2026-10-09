@@ -25,32 +25,41 @@ A melhor prática para validar o seu projeto de gamificação antes de investir 
 !!! tip
     O *playtesting* revelará se as mecânicas que você escolheu na Unidade IV realmente ativam as motivações mapeadas na Unidade III. Por exemplo, você pode descobrir observando o usuário que a missão projetada para os seus *Achievers* está muito fácil, ou que um *Free Spirit* se sentiu preso na interface. O teste serve exatamente para identificar essas irregularidades e equilibrar o sistema antes do lançamento oficial.
 
+### O Plano de Gamificação Geral - PGG
 
+O Plano Geral de Gamificação (PGG) é o documento técnico responsável por explicar em detalhes todo o funcionamento de uma solução gamificada, registrando o processo criativo e o embasamento teórico que levaram à construção do produto final.
 
+Diferente do "Manual de Gamificação", que é um guia mais visual e prático voltado para o usuário final, o PGG é desenhado exclusivamente para pessoas de perfil técnico. O objetivo desse documento é permitir que qualquer outro designer ou desenvolvedor entenda o raciocínio por trás de todas as decisões tomadas ao longo do projeto. Dessa forma, a equipe consegue compreender, avaliar, realizar manutenções ou evoluir o design proposto futuramente, sem perder o conhecimento original construído.
 
-### O Plano de Gamificação Geral - PGG (Desafio)
+Em resumo, o PGG exige documentar as ideias com foco na implementação, consolidando regras, jornadas e justificativas estratégicas.
 
-!!! Warning
-    Em desenvolvimento
+#### A Estrutura de um PGG
 
-<!-- OO desafio final desta unidade exige que você documente as suas ideias em um desenvolvimento de conceito focado na implementação. Esse documento, o PGG, consolidará as regras, a jornada do usuário e justificará o alinhamento das mecânicas com o perfil predominante dos colaboradores mapeados.
+Para que o planejamento cumpra o seu papel, o documento deve conectar o problema identificado com as soluções de design. Seguindo o [template do PGG](assets/Template%20PGG.docx), um PGG completo é dividido nas seguintes seções:
 
-Para comprovar a sua visão sistêmica, o seu PGG deverá conter as seguintes sessões fundamentais:
+* **1. Vocabulário:** A definição dos termos técnicos utilizados ao longo do documento, para facilitar a leitura tanto para o cliente quanto para a equipe.
 
-* **O Problema e Objetivos:** A justificativa da causa raiz da falta de engajamento e a definição das métricas de sucesso do projeto.
+* **2. Introdução:** A descrição breve, clara e objetiva do documento, apresentando seus objetivos e o projeto/cliente.
 
-* **Análise dos Jogadores:** A classificação do público-alvo e de suas motivações utilizando frameworks como o Hexad ou Octalysis.
+* **3. Contexto:** As informações do projeto — quem contratou, o escopo, o que está sendo desenvolvido, os problemas a resolver e os objetivos da gamificação. Abrange também a análise da causa raiz e a definição das métricas de sucesso e acompanhamento.
 
-* **O Mundo e a Jornada:** O tema ou narrativa envolvente que conecta os usuários à atividade, garantindo que o início e o fim se conectem de forma orgânica.
+* **4. Público-alvo:** O registro da pesquisa sobre quem são os usuários, definindo os tipos de *players* dominantes (embasado em frameworks como o Hexad) e mapeando o que os motiva ou desmotiva individualmente (como as motivações intrínsecas e extrínsecas do Octalysis). Também deve descrever as características desses tipos de *players*.
 
-* **Mecânicas e Dinâmicas:** A listagem dos elementos de jogo (pontos, distintivos, rankings) e a justificativa de como eles se alinham aos perfis dos usuários.
+* **5. Gamificação no Aplicativo:** A descrição da gamificação idealizada, evidenciando os problemas e objetivos que ela ataca, quais Core Drives são mais utilizados e as técnicas propostas, além de como serão implementadas.
 
-* **Plano de Teste e Monitoramento:** A previsão de como o sistema será testado na vida real (prototipação rápida) e como será feito o monitoramento contínuo para evitar fraudes (*cheating*) e aplicar melhorias. -->
+* **6. Teorias de Gamificação:** A explicação das teorias utilizadas na elaboração do plano (Octalysis e seus Core Drives, Hexad, Tipos de Players, entre outras).
 
+* **7. Jornada:** As etapas que o *player* percorrerá dentro da gamificação, divididas em **Fases da Gamificação — Teoria** (Descoberta, Entrada, Dia a dia e Saída) e **Fases da Gamificação — Prática**.
 
 ---
 
-## 3. Próximo Passo
+## 3. Desafio
 
-Com todo o conhecimento absorvido, acesse o diretório de templates do seu repositório individual. Preencha o Canvas do PGG detalhando a sua solução para um problema e prepare-se para submeter o arquivo final.
+[Validação e Consolidação do PGG](/trilha-gamificacao/desafio/#unidade-v-validacao-e-consolidacao-do-pgg){.md-button .md-button--primary}
+
+---
+
+## 4. Próximo Passo
+
+Com todo o conhecimento absorvido, acesse o [template do PGG](assets/Template%20PGG.docx), consolide todos os blocos construídos ao longo da trilha e prepare-se para submeter o **Plano Geral de Gamificação** completo.
 

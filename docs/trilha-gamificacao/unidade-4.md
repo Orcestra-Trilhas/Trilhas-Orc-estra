@@ -44,7 +44,14 @@ O sucesso da gamificação depende de personalizar o conteúdo e as mecânicas d
 
 ---
 
-## 3. Próximo Passo
+## 3. Desafio
+
+[Mundo, Jornada e Mecânicas](/trilha-gamificacao/desafio/#unidade-iv-mundo-jornada-e-mecanicas){.md-button .md-button--primary}
+
+
+---
+
+## 4. Próximo Passo
 
 Com as mecânicas selecionadas e a jornada desenhada, avance para a **Unidade V** para aprender como validar suas ideias através de protótipos e testes reais (*playtesting*), e prepare-se para o desafio final: a construção do seu **Plano de Gamificação Geral (PGG)**.
 
