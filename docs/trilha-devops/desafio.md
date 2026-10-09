@@ -236,13 +236,19 @@ Atualizar Fork, criar nova branch, implementar melhoria aprovada, validar localm
 
 ## 4. Entrega Final e Avaliação
 
-### Itens de Entrega Final
-- Link do Fork do repositório Site-Orc;
-- Link do Pull Request contendo a contribuição realizada;
-- Evidências da aplicação executando localmente;
-- Evidências da aplicação executando via Docker;
-- Registro das principais dificuldades encontradas e soluções aplicadas;
-- Documentação atualizada, quando necessário.
+### Como Realizar a Entrega
+A entrega deve ser formalizada através de um **arquivo Markdown (ex: `entrega-devops.md` ou similar)** versionado dentro de uma pasta /devops no seu **repositório pessoal de capacitação das trilhas** no GitHub.
+
+Esse arquivo servirá como o relatório oficial da sua contribuição e deve conter:
+- **Link do Pull Request**: O link direto para o PR aberto no repositório do **Site-Orc** com a melhoria implementada;
+- **Link do Fork**: O link do repositório bifurcado onde a branch foi desenvolvida;
+- **Evidências Visuais e Logs**: Prints comprovando a aplicação em execução localmente e via contêineres Docker;
+- **Registro de Troubleshooting**: Breve relatório das principais dificuldades encontradas (dependências, portas, build) e as soluções aplicadas;
+- **Documentação e Notas**: Breve resumo técnico da contribuição realizada, oq aprendeu e como aplicou o uso de ia no projeto, falando no que ela ajudou e o que ela atrapalhou.
+
+> [!TIP]
+> **Por que essa dinâmica de entrega?**
+> Além de comprovar a sua contribuição direta no projeto institucional (**Site-Orc**), essa prática consolida o conceito de *Documentation as Code* (Documentação como Código), permitindo que os diretores e avaliadores façam o Code Review completo do PR e auditem seu progresso diretamente no seu repositório de portfólio.
 
 ### Critérios de Avaliação
 Para aprovação na trilha, o participante deverá demonstrar capacidade de:
