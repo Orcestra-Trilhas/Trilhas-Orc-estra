@@ -1,96 +1,262 @@
-# Unidade VI – Spring Boot & APIs REST
+# Unidade VI: Spring Boot
 
 ---
 
 ## 1. Visão Geral
 
-Agora que você já domina Java, banco de dados e o protocolo HTTP, é hora de integrar tudo construindo sua primeira **API REST** profissional com **Spring Boot**.
+Agora que você domina Java, banco de dados e HTTP, é hora de entrar no ecossistema Spring. Nesta unidade você entende os conceitos centrais do **Spring Framework** (Inversão de Controle, Injeção de Dependência, Beans e Contexto), como o **Spring Boot** simplifica seu uso, e como estruturar um projeto em **camadas**.
 
-Nesta unidade, você entenderá os conceitos centrais do Spring Framework (Inversão de Controle, Injeção de Dependência, Beans e Contexto), como o Spring Boot simplifica o uso desses conceitos, e vai estruturar um projeto em camadas usando o padrão **MVC**, com ORM via **Spring Data JPA** e persistência em memória com **H2 Database**.
+Aqui você monta o **esqueleto** da aplicação: camadas, configuração, logs e um primeiro teste. A persistência com banco entra na Unidade VII, e os Controllers completos (DTOs, validação, erros) na Unidade VIII. Por isso, nesta unidade o repositório guarda os dados **em memória**.
 
 ---
 
 ## 2. Fundamentos do Spring Framework
 
-O **Spring Framework** é, na essência, um framework de **injeção de dependência**: ele existe para gerenciar a criação e o ciclo de vida dos objetos da sua aplicação, para que você não precise fazer isso manualmente com `new` espalhado pelo código.
+O **Spring Framework** é, na essência, um framework de **injeção de dependência**: ele gerencia a criação e o ciclo de vida dos objetos da aplicação, para você não espalhar `new` pelo código.
 
 ### 6.1 Inversão de Controle (IoC)
 
-Tradicionalmente, é a sua classe quem decide *quando* e *como* criar os objetos de que depende (ex.: um `TarefaService` fazendo `new TarefaRepository()` dentro dele mesmo). Com **Inversão de Controle**, essa responsabilidade é invertida: quem cria e gerencia os objetos passa a ser o **framework**, não a sua classe. Sua classe apenas *declara* do que precisa, e o Spring se encarrega de fornecer.
+Tradicionalmente, a sua classe decide *quando* e *como* criar suas dependências (um `TarefaService` fazendo `new TarefaRepository()`). Com **Inversão de Controle**, essa responsabilidade passa ao **framework**. Sua classe apenas *declara* do que precisa, e o Spring fornece.
 
 ### 6.2 Injeção de Dependência (DI)
 
-É o **mecanismo** pelo qual a Inversão de Controle acontece na prática: o Spring "injeta" as dependências que uma classe precisa, em vez dela criá-las sozinha. As formas mais comuns são:
+É o **mecanismo** pelo qual a IoC acontece: o Spring "injeta" as dependências em vez de a classe criá-las. Formas comuns:
 
-- **Injeção via construtor** (recomendada): as dependências são passadas como parâmetros do construtor.
-- **Injeção via campo** (`@Autowired` direto no atributo): mais simples de escrever, porém menos recomendada (dificulta testes e deixa dependências implícitas).
+- **Injeção via construtor** (recomendada): dependências como parâmetros do construtor.
+- **Injeção via campo** (`@Autowired` no atributo): mais curta, porém menos recomendada (dificulta testes e esconde dependências).
+
+```java
+@Service
+public class UsuarioService {
+
+    private final UsuarioRepository repository;
+
+    // Com um único construtor, o @Autowired é dispensável
+    public UsuarioService(UsuarioRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+
+Vantagens do construtor: a dependência é `final` (imutável), a classe nunca existe "pela metade" e nos testes você passa um objeto falso (*mock*) diretamente.
 
 ### 6.3 Beans
 
-Um **Bean** é qualquer objeto cujo ciclo de vida (criação, configuração e destruição) é **gerenciado pelo Spring**, em vez de gerenciado manualmente por você. Uma classe se torna candidata a Bean ao ser anotada com estereótipos como `@Component`, `@Service`, `@Repository` ou `@Controller`, ou ao ser declarada manualmente em uma classe de configuração com `@Bean`.
+Um **Bean** é um objeto cujo ciclo de vida é **gerenciado pelo Spring**. Uma classe vira candidata a Bean com os estereótipos `@Component`, `@Service`, `@Repository`, `@Controller`/`@RestController`, ou declarada em uma classe de configuração com `@Bean`:
 
-### 6.4 Componentes (Component Scanning)
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public Clock clock() {
+        return Clock.systemDefaultZone();
+    }
+}
+```
 
-O Spring localiza automaticamente as classes que devem virar Beans através do **Component Scanning** — ele varre os pacotes do projeto em busca de classes anotadas com `@Component` (e suas especializações `@Service`, `@Repository`, `@Controller`), registrando-as automaticamente sem precisar de configuração manual em XML.
+Por padrão, um Bean é um **singleton**: existe **uma única instância** compartilhada em toda a aplicação. Por isso, Beans (Services, Controllers) **não devem guardar estado mutável** por usuário em atributos.
+
+### 6.4 Component Scanning
+
+O Spring localiza as classes que devem virar Beans varrendo os pacotes do projeto em busca de `@Component` e suas especializações (`@Service`, `@Repository`, `@Controller`).
+
+!!! warning "A varredura começa no pacote da classe principal"
+    O scan cobre o pacote da classe `@SpringBootApplication` **e os subpacotes dele**. Se você criar uma classe `@Service` em um pacote irmão (fora dessa árvore), ela **não** é encontrada e você recebe um erro de "bean not found". Mantenha tudo abaixo do pacote principal (ex.: `com.orcestra.tarefas`).
 
 ### 6.5 Contexto de Aplicação (ApplicationContext)
 
-O **`ApplicationContext`** é o "container" central do Spring: é ele quem efetivamente instancia, configura e armazena todos os Beans da aplicação, e é dele que os Beans são retirados (injetados) sempre que uma classe declara precisar de uma dependência. Pode-se pensar nele como o registro vivo de tudo que o Spring está gerenciando durante a execução da aplicação.
+O **`ApplicationContext`** é o "container" central: instancia, configura e armazena todos os Beans, e é dele que eles são retirados (injetados). Pense nele como o registro vivo de tudo que o Spring gerencia durante a execução.
 
 ---
 
 ## 3. Spring Boot: Simplificando o Spring
 
-O **Spring Boot** não é um framework diferente do Spring — é uma camada construída **em cima** do Spring Framework, com foco em reduzir configuração manual e acelerar o início de um projeto. Os conceitos de IoC, DI, Beans e Contexto continuam sendo exatamente os mesmos da seção 2 — o Spring Boot só automatiza a forma de configurá-los, através dos três pilares abaixo.
+O **Spring Boot** não é outro framework: é uma camada **sobre** o Spring Framework que reduz configuração manual. IoC, DI, Beans e Contexto continuam sendo os mesmos; o Boot só automatiza a configuração.
 
-### 6.6 Starters
+### 6.6 A Classe Principal e `@SpringBootApplication`
 
-Um **Starter** é um "pacote de dependências" pré-configurado para um propósito específico — em vez de você descobrir manualmente quais bibliotecas são compatíveis entre si para, por exemplo, construir uma API web, você adiciona uma única dependência (ex.: `spring-boot-starter-web`) e ela já traz tudo que é necessário (Spring MVC, Jackson para JSON, Tomcat embutido, etc.), com versões testadas e compatíveis entre si.
+```java
+@SpringBootApplication
+public class TarefasApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TarefasApplication.class, args);
+    }
+}
+```
 
-Alguns starters comuns:
-- **`spring-boot-starter-web`**: para construir APIs REST e aplicações web (traz Spring MVC + servidor embutido).
-- **`spring-boot-starter-data-jpa`**: para persistência com JPA/Hibernate.
-- **`spring-boot-starter-security`**: para autenticação e autorização com Spring Security.
-- **`spring-boot-starter-test`**: para testes (JUnit, Mockito, etc.).
+`@SpringBootApplication` é uma anotação "guarda-chuva" que combina três:
 
-Isso resolve um problema real do Spring "clássico": antes dos starters, era comum ter conflitos de versão entre bibliotecas (o famoso "dependency hell"), já que cada uma precisava ser adicionada e versionada manualmente.
+- `@Configuration`: a classe pode declarar Beans com `@Bean`.
+- `@ComponentScan`: ativa a varredura de componentes a partir deste pacote.
+- `@EnableAutoConfiguration`: liga a auto-configuração (seção 6.8).
 
-### 6.7 Auto-Configuração (Auto-Configuration)
+`SpringApplication.run(...)` cria o `ApplicationContext`, executa a varredura e sobe o servidor embutido.
 
-É o mecanismo pelo qual o Spring Boot **configura Beans automaticamente**, com base no que ele encontra no classpath do seu projeto. Funciona assim, na prática:
+### 6.7 Starters
 
-1. Ao subir a aplicação, o Spring Boot analisa quais dependências (jars) estão presentes no projeto.
-2. Para cada uma que ele reconhece, existe uma classe de auto-configuração correspondente (anotada internamente com `@Conditional...`), que só é ativada **se** determinadas condições forem atendidas — ex.: "se existir um driver do H2 no classpath **e** não houver um Bean de `DataSource` já definido manualmente, crie um `DataSource` automaticamente apontando para um banco H2 em memória".
-3. Isso significa que a auto-configuração **nunca sobrescreve** uma configuração que você já fez manualmente — ela só entra em ação para preencher o que está faltando, seguindo um princípio de "configuração sensata por padrão, mas sempre sobrescrevível".
+Um **Starter** é um pacote de dependências pré-configurado para um propósito. Em vez de descobrir quais bibliotecas são compatíveis, você adiciona uma dependência (ex.: `spring-boot-starter-web`) e ela traz tudo, com versões testadas entre si.
 
-Na prática, é a auto-configuração que permite você simplesmente adicionar `spring-boot-starter-data-jpa` + o driver do H2 e já ter um banco funcionando, sem escrever uma linha de configuração de `DataSource`.
+- **`spring-boot-starter-web`**: APIs REST (Spring MVC + Jackson para JSON + Tomcat embutido).
+- **`spring-boot-starter-data-jpa`**: persistência com JPA/Hibernate.
+- **`spring-boot-starter-validation`**: Bean Validation (`@NotBlank`, `@Valid`...). **Não vem** dentro do starter web.
+- **`spring-boot-starter-security`**: autenticação e autorização.
+- **`spring-boot-starter-test`**: JUnit, Mockito, AssertJ, MockMvc.
 
-### 6.8 Servidores Embutidos (Embedded Servers)
+Isso resolve o "dependency hell" do Spring clássico, em que cada biblioteca era versionada manualmente.
 
-Tradicionalmente, uma aplicação Java web precisava ser empacotada como `.war` e implantada manualmente em um servidor externo (como um Tomcat instalado à parte na máquina/servidor). O Spring Boot inverte essa lógica: o servidor web (por padrão, o **Tomcat**, mas também é possível usar **Jetty** ou **Undertow**) vem **embutido dentro do próprio `.jar`** da aplicação.
+### 6.8 Auto-Configuração (Auto-Configuration)
 
-Isso significa que rodar a aplicação é literalmente executar `java -jar aplicacao.jar` — o servidor sobe junto, na mesma JVM, sem exigir instalação ou configuração externa. É esse mecanismo que permite testar a API localmente (ex.: em `localhost:8080`) assim que você inicia o projeto, sem nenhum passo adicional de deploy.
+O Spring Boot **configura Beans automaticamente** com base no que encontra no classpath:
+
+1. Ao subir, analisa quais dependências (jars) estão presentes.
+2. Para cada uma que reconhece, existe uma classe de auto-configuração condicional (`@Conditional...`), ativada **somente se** certas condições forem atendidas (ex.: "se o driver do H2 está no classpath **e** não há um `DataSource` definido por você, crie um para H2 em memória").
+3. A auto-configuração **nunca sobrescreve** o que você configurou: ela só preenche o que falta ("configuração sensata por padrão, sempre sobrescrevível").
+
+Para ver o que foi ou não auto-configurado, rode a aplicação com a propriedade `debug=true` (imprime o relatório de condições).
+
+### 6.9 Servidores Embutidos
+
+Antes, uma aplicação Java web virava um `.war` implantado em um Tomcat instalado à parte. O Boot inverte: o servidor (por padrão **Tomcat**; também Jetty ou Undertow) vem **dentro do `.jar`**. Executar a aplicação é `java -jar aplicacao.jar`, e ela já responde em `localhost:8080`.
+
+### 6.10 Configuração: `application.properties` / `application.yml`
+
+Ajustes da aplicação ficam em `src/main/resources/application.properties` (ou `.yml`):
+
+```properties
+server.port=8081
+spring.application.name=gerenciador-tarefas
+logging.level.com.orcestra=DEBUG
+```
+
+**Profiles** permitem configurações diferentes por ambiente. Um arquivo `application-dev.properties` só é carregado quando o profile `dev` está ativo (`spring.profiles.active=dev`). Valores sensíveis (senhas, chaves) **nunca** vão para o Git: leia de **variáveis de ambiente** com `${NOME_DA_VARIAVEL}`:
+
+```properties
+minha.chave.secreta=${MINHA_CHAVE}
+```
+
+```java
+@Value("${minha.chave.secreta}")
+private String chave;
+```
+
+### 6.11 Logs
+
+Não use `System.out.println` em aplicações Spring. Use o **SLF4J** (já incluso):
+
+```java
+private static final Logger log = LoggerFactory.getLogger(UsuarioService.class);
+
+log.info("Usuário criado: id={}", usuario.getId());
+log.warn("Tentativa de acesso ao usuário inexistente id={}", id);
+log.error("Falha ao salvar usuário", excecao);
+```
+
+Níveis, do mais ao menos verboso: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`. O nível se controla por pacote em `logging.level.*`.
 
 ---
 
-## 4. Estrutura em Camadas (MVC)
+## 4. Estrutura em Camadas
 
-Com esses conceitos entendidos, o projeto será organizado seguindo o padrão **MVC** adaptado para APIs REST:
+!!! note "Sobre o nome 'MVC'"
+    Em uma aplicação web clássica, MVC tem **View** (HTML). Uma API REST devolve JSON e não tem View. O que usamos é uma **arquitetura em camadas** inspirada em MVC.
 
-- **Controller**: camada responsável por receber as requisições HTTP e devolver as respostas — não contém regra de negócio.
-- **Service**: camada onde fica a regra de negócio da aplicação.
-- **Repository**: camada responsável pela comunicação com o banco de dados, usando o **Spring Data JPA** para abstrair as operações de persistência (ORM).
+- **Controller:** recebe as requisições HTTP e devolve as respostas. **Sem regra de negócio.**
+- **Service:** regra de negócio da aplicação.
+- **Repository:** comunicação com o armazenamento de dados.
+- **Model:** as classes de domínio (`Usuario`, `Tarefa`...).
+
+Regra de dependência: **Controller → Service → Repository**, sempre nesse sentido. Um Controller nunca fala direto com o Repository.
+
+### 6.12 Seu Primeiro Endpoint (visão mínima)
+
+Para verificar que a aplicação funciona, é suficiente este Controller. Os detalhes (DTOs, validação, status codes, erros) são o tema da Unidade VIII.
+
+```java
+@RestController
+@RequestMapping("/usuarios")
+public class UsuarioController {
+
+    private final UsuarioService service;
+
+    public UsuarioController(UsuarioService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public List<Usuario> listar() {
+        return service.listar();
+    }
+}
+```
+
+### 6.13 Repositório em Memória (temporário)
+
+Como o JPA só chega na Unidade VII, implemente o repositório com um `Map`. **Use os mesmos nomes de método do Spring Data** (`save`, `findById`, `findAll`, `deleteById`) e retorne `Optional` onde fizer sentido: na Unidade VII você troca esta classe por uma interface `JpaRepository` e o **Service não muda**, o que é uma demonstração prática do valor da arquitetura em camadas.
+
+```java
+@Repository
+public class UsuarioRepository {
+
+    private final Map<Long, Usuario> banco = new ConcurrentHashMap<>();
+    private final AtomicLong sequencia = new AtomicLong(1);
+
+    public Usuario save(Usuario usuario) { /* gera id, guarda no mapa, devolve */ }
+    public Optional<Usuario> findById(Long id) { return Optional.ofNullable(banco.get(id)); }
+    public List<Usuario> findAll() { return new ArrayList<>(banco.values()); }
+    public void deleteById(Long id) { banco.remove(id); }
+}
+```
 
 ---
 
-## 5. Artigos
+## 5. Primeiros Testes
 
-- 🌐 [Artigo: Como conectar o H2 Database com o Spring Boot](https://wpsilva.medium.com/utilizando-banco-de-dados-h2-com-spring-de-forma-r%C3%A1pida-e-simples-6d896e15a4af)
+O `spring-boot-starter-test` já vem no projeto gerado. Um teste de **unidade** de Service, sem subir o Spring, usando JUnit 5 e Mockito:
+
+```java
+@ExtendWith(MockitoExtension.class)
+class UsuarioServiceTest {
+
+    @Mock
+    private UsuarioRepository repository;
+
+    @InjectMocks
+    private UsuarioService service;
+
+    @Test
+    void deveLancarExcecaoQuandoUsuarioNaoExiste() {
+        when(repository.findById(99L)).thenReturn(Optional.empty());
+
+        assertThrows(UsuarioNaoEncontradoException.class, () -> service.buscarPorId(99L));
+    }
+}
+```
+
+O padrão **Arrange / Act / Assert** (preparar, executar, verificar) organiza qualquer teste. Rode com `./mvnw test`. Esse teste só é possível porque a dependência entra pelo **construtor**.
 
 ---
 
-## 6. Projeto Prático: API REST do Gerenciador de Tarefas
+## 6. Artigos
 
-Transforme sua aplicação de terminal em uma API REST profissional com Spring Boot e H2:
+- 🌐 [Artigo: Como conectar o H2 Database com o Spring Boot](https://wpsilva.medium.com/utilizando-banco-de-dados-h2-com-spring-de-forma-r%C3%A1pida-e-simples-6d896e15a4af) (leia na Unidade VII, quando for ligar o banco)
 
-- 🌐 [Instruções do Mini Projeto Spring Boot ➔](desafio.md#3-mini-projeto-3-api-rest-com-spring-boot-h2-database)
+---
+
+## 7. Checklist de Conclusão
+
+- [ ] Explico IoC e DI com minhas palavras e sei por que o construtor é preferível ao `@Autowired` em campo.
+- [ ] Digo o que são os três componentes de `@SpringBootApplication`.
+- [ ] Sei por que um `@Service` fora do pacote principal não é encontrado.
+- [ ] Explico o que é um starter e o que a auto-configuração faz (e que ela não sobrescreve minha configuração).
+- [ ] Leio uma propriedade de `application.properties` e de uma variável de ambiente com `@Value`.
+- [ ] Uso `log.info` em vez de `System.out.println`.
+- [ ] Descrevo a responsabilidade de cada camada e o sentido das dependências.
+- [ ] Escrevi e rodei ao menos um teste de Service com Mockito.
+
+---
+
+## 8. Projeto Prático
+
+Monte o esqueleto Spring Boot em camadas do Gerenciador de Tarefas, com repositório em memória:
+
+- 🌐 [Instruções do Mini Projeto 3: Esqueleto Spring Boot ➔](desafio.md#mini-projeto-3)
