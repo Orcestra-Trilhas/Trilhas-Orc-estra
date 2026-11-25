@@ -60,6 +60,7 @@ markdown_extensions:
 
 nav:
   - Início: index.md
+
   - Front-end:
       - Visão Geral: trilha-frontend/index.md
       - Unidade I – Onboarding: trilha-frontend/unidade-1.md
@@ -69,6 +70,7 @@ nav:
       - Unidade V – JavaScript: trilha-frontend/unidade-5.md
       - Unidade VI – React: trilha-frontend/unidade-6.md
       - Desafios Práticos: trilha-frontend/desafio.md
+
   - Back-end:
       - Visão Geral: trilha-backend/index.md
       - Unidade I – Ambiente: trilha-backend/unidade-1.md
@@ -79,6 +81,7 @@ nav:
       - Unidade VI – Spring Boot: trilha-backend/unidade-6.md
       - Unidade VII – Spring Security: trilha-backend/unidade-7.md
       - Desafios Práticos: trilha-backend/desafio.md
+
   - DevOps:
       - Visão Geral: trilha-devops/index.md
       - Unidade I – Fundamentos de SO & Redes: trilha-devops/unidade-1.md
@@ -86,6 +89,7 @@ nav:
       - Unidade III – Contêineres, Cloud & DevSecOps: trilha-devops/unidade-3.md
       - Unidade IV – Troubleshooting & Formações: trilha-devops/unidade-4.md
       - Desafios Práticos: trilha-devops/desafio.md
+
   - Design (Figma):
       - Visão Geral: trilha-figma/index.md
       - Unidade I – Fundamentos & Ambiente: trilha-figma/unidade-1.md
@@ -93,6 +97,7 @@ nav:
       - Unidade III – Componentização: trilha-figma/unidade-3.md
       - Unidade IV – Prototipagem & Dev Mode: trilha-figma/unidade-4.md
       - Desafios Práticos: trilha-figma/desafio.md
+
   - Gamificação:
       - Visão Geral: trilha-gamificacao/index.md
       - Unidade I - Fundamentos da Gamificação: trilha-gamificacao/unidade-1.md
@@ -102,21 +107,34 @@ nav:
       - Unidade V - Prototipação, Teste e PGG: trilha-gamificacao/unidade-5.md
       - Desafios Práticos: trilha-gamificacao/desafio.md
       - Materiais Complementares: trilha-gamificacao/material-complementar.md
-  - Mobile:
-      - Visão Geral: trilha-mobile/index.md
-      - Unidade I – Fundamentos Mobile & Onboarding: trilha-mobile/unidade-1.md
-      - Unidade II – JavaScript & TypeScript: trilha-mobile/unidade-2.md
-      - Unidade III – React Native Primeiros Passos: trilha-mobile/unidade-3.md
-      - Unidade IV – React Native Navegação & Estado: trilha-mobile/unidade-4.md
-      - Unidade V – React Native APIs & Recursos Nativos: trilha-mobile/unidade-5.md
-      - Unidade VI – Lynx: trilha-mobile/unidade-6.md
-      - Desafios Práticos: trilha-mobile/desafio.md
-  - Eletrônica & Embarcados:
-      - Visão Geral: trilha-embarcados/index.md
-      - Unidade I – Fundamentos & Instrumentação: trilha-embarcados/unidade-1.md
-      - Unidade II – ESP32 & Raspberry Pi Pico 2W: trilha-embarcados/unidade-2.md
-      - Unidade III – Programação MicroPython & Setup: trilha-embarcados/unidade-3.md
-      - Unidade IV – GPIOs, Sensores & Atuadores: trilha-embarcados/unidade-4.md
-      - Unidade V – Protocolos & IoT: trilha-embarcados/unidade-5.md
-      - Unidade VI – PCB no KiCad: trilha-embarcados/unidade-6.md
-      - Desafios Práticos: trilha-embarcados/desafio.md
+
+  - Trilhas Complementares:
+
+    - Mobile:
+        - Visão Geral: trilha-mobile/index.md
+        - Unidade I – Fundamentos Mobile & Onboarding: trilha-mobile/unidade-1.md
+        - Unidade II – JavaScript & TypeScript: trilha-mobile/unidade-2.md
+        - Unidade III – React Native Primeiros Passos: trilha-mobile/unidade-3.md
+        - Unidade IV – React Native Navegação & Estado: trilha-mobile/unidade-4.md
+        - Unidade V – React Native APIs & Recursos Nativos: trilha-mobile/unidade-5.md
+        - Unidade VI – Lynx: trilha-mobile/unidade-6.md
+        - Desafios Práticos: trilha-mobile/desafio.md
+
+    - Eletrônica & Embarcados:
+        - Visão Geral: trilha-embarcados/index.md
+        - Unidade I – Fundamentos & Instrumentação: trilha-embarcados/unidade-1.md
+        - Unidade II – ESP32 & Raspberry Pi Pico 2W: trilha-embarcados/unidade-2.md
+        - Unidade III – Programação MicroPython & Setup: trilha-embarcados/unidade-3.md
+        - Unidade IV – GPIOs, Sensores & Atuadores: trilha-embarcados/unidade-4.md
+        - Unidade V – Protocolos & IoT: trilha-embarcados/unidade-5.md
+        - Unidade VI – PCB no KiCad: trilha-embarcados/unidade-6.md
+        - Desafios Práticos: trilha-embarcados/desafio.md
+
+    - LinkedIn:
+        - Visão Geral: trilha-linkedin/index.md
+        - Unidade I – Fundamentos, Identidade & Setup: trilha-linkedin/unidade-1.md
+        - Unidade II – Otimização & Headline: trilha-linkedin/unidade-2.md
+        - Unidade III – Experiências & Destaques: trilha-linkedin/unidade-3.md
+        - Unidade IV – Networking Estratégico: trilha-linkedin/unidade-4.md
+        - Unidade V – Produção de Conteúdo: trilha-linkedin/unidade-5.md
+        - Desafios Práticos: trilha-linkedin/desafio.md
