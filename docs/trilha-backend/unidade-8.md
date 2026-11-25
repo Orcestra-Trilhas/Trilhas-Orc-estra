@@ -1,157 +1,353 @@
-# Spring Data JPA – Persistência e ORM
+# Unidade VIII: Spring Web
 
 ---
 
 ## 1. Visão Geral
 
-Nas unidades anteriores, você conheceu o Spring Data JPA de forma superficial, como a camada de persistência do projeto. Aqui, você vai entender **como ele funciona por baixo dos panos**: o que é ORM, qual a relação entre JPA, Hibernate e Spring Data JPA, como mapear entidades, como funcionam os repositórios prontos do Spring e como escrever consultas personalizadas.
+Enquanto o Spring Data JPA cuida da persistência, o **Spring Web** (`spring-boot-starter-web`) expõe a aplicação como uma API HTTP: recebe requisições, extrai dados, chama o Service e devolve respostas.
 
-Ao final, você será capaz de mapear classes Java para tabelas do banco, modelar relacionamentos entre entidades e escolher a forma mais adequada de consultar dados — sem escrever SQL manualmente na maioria dos casos.
+Aqui você aprende como uma requisição chega ao seu código, como mapear rotas, **por que não expor entidades e usar DTOs**, como controlar status codes, validar dados, **padronizar erros em um formato único**, documentar a API com Swagger e testá-la.
 
----
-## 2. Fundamento do Spring Data JPA
-
-### 8.1 ORM: O Problema que o JPA Resolve
-
-**ORM (Object-Relational Mapping)** é a técnica de mapear objetos do código (classes Java) para tabelas de um banco de dados relacional, e vice-versa. O problema que ele resolve é o chamado **"impedance mismatch"**: bancos relacionais trabalham com tabelas, linhas e chaves estrangeiras, enquanto o código orientado a objetos trabalha com classes, atributos e referências entre objetos — são dois modelos diferentes de representar a mesma informação.
-
-Sem ORM, cada operação de banco exigiria escrever SQL manualmente e converter o resultado (`ResultSet`) em objetos Java na mão, linha por linha. O ORM automatiza essa conversão nos dois sentidos: transforma um objeto em `INSERT`/`UPDATE` e transforma uma linha de tabela de volta em objeto.
-
-### 8.2 JPA, Hibernate e Spring Data JPA: Quem é Quem
-
-É comum confundir esses três nomes, mas eles atuam em camadas diferentes:
-
-- **JPA (Jakarta Persistence API)** — é apenas uma **especificação** (um conjunto de interfaces e anotações, como `@Entity` e `EntityManager`). Ela define *o quê* deve existir, mas não implementa nada sozinha.
-- **Hibernate** — é a **implementação** mais usada da especificação JPA. É ele quem de fato traduz seus objetos em SQL e executa as operações no banco. Existem outras implementações (ex.: EclipseLink), mas o Hibernate é o padrão de facto no ecossistema Spring.
-- **Spring Data JPA** — é uma camada **acima** do JPA/Hibernate, criada pelo Spring para eliminar código repetitivo. Com ele, você geralmente nem interage diretamente com `EntityManager` ou escreve implementações de repositório — basta declarar uma **interface**, e o Spring Data JPA gera a implementação automaticamente em tempo de execução.
-
-Resumindo a cadeia: você programa contra o **Spring Data JPA** → que usa o **JPA** como contrato → implementado pelo **Hibernate** → que gera o **SQL** de fato.
+!!! note "Pré-requisitos"
+    Usa exceções customizadas (Unidade II), Records e `Optional` (Unidade III), verbos e status codes (Unidade V), a arquitetura em camadas (Unidade VI) e as entidades JPA (Unidade VII).
 
 ---
 
-### 8.3 Mapeando Entidades
+## 2. Fundamentos do Spring Web
 
-Uma **Entidade** é uma classe Java que representa uma tabela do banco de dados. O mapeamento básico é feito com anotações:
+### 8.1 Como uma Requisição Chega ao Controller
 
-- **`@Entity`**: marca a classe como uma entidade JPA.
-- **`@Table(name = "tarefas")`**: define o nome da tabela (opcional — sem ela, o nome da tabela é o nome da classe).
-- **`@Id`**: marca o atributo que é a chave primária.
-- **`@GeneratedValue(strategy = GenerationType.IDENTITY)`**: define como o ID é gerado (ex.: `IDENTITY` delega a geração ao próprio banco, como um `AUTO_INCREMENT`).
-- **`@Column(name = "descricao", nullable = false)`**: customiza uma coluna (nome, se aceita nulo, tamanho, etc.) — opcional para colunas com mapeamento padrão.
+- **`DispatcherServlet`**: o "front controller" do Spring MVC. Todo request HTTP passa primeiro por ele. Ele consulta o **Handler Mapping** para descobrir qual método do Controller trata aquela URL + verbo e delega a chamada.
+- **Handler Mapping**: casa URL + verbo HTTP com o método certo, a partir de `@RequestMapping`/`@GetMapping`/etc.
+- Quando o método retorna, o `DispatcherServlet` entrega o valor a um **`HttpMessageConverter`** (por padrão o Jackson, para JSON), que serializa o objeto Java em JSON.
+
+Fluxo: `Requisição → [Filtros de Security] → DispatcherServlet → Handler Mapping → Controller → HttpMessageConverter → Resposta`.
+
+### 8.2 Criando um Controller REST
+
+- **`@RestController`**: combina `@Controller` (Bean que recebe requisições) com `@ResponseBody` (o retorno vai direto para o corpo, como JSON).
+- **`@RequestMapping("/tarefas")`**: prefixo de rota para a classe.
 
 ```java
-@Entity
-@Table(name = "tarefas")
-public class Tarefa {
+@RestController
+@RequestMapping("/tarefas")
+public class TarefaController {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private final TarefaService service;
 
-    @Column(nullable = false)
-    private String descricao;
-
-    private boolean concluida;
+    public TarefaController(TarefaService service) {
+        this.service = service;
+    }
 }
 ```
 
----
-
-### 8.4 Relacionamentos Entre Entidades
-
-O JPA mapeia as cardinalidades vistas na Unidade IV (modelagem) diretamente em anotações:
-
-- **`@OneToMany` / `@ManyToOne`**: relação 1:N. Ex.: um `Usuario` tem várias `Tarefa` (`@OneToMany` no `Usuario`), e cada `Tarefa` pertence a um `Usuario` (`@ManyToOne` na `Tarefa`, lado que efetivamente guarda a chave estrangeira).
-- **`@OneToOne`**: relação 1:1, ex.: um `Usuario` e um `PerfilUsuario`.
-- **`@ManyToMany`**: relação N:N, ex.: uma `Tarefa` pode ter várias `Tag`, e cada `Tag` pode estar em várias `Tarefa` — o JPA gera automaticamente uma tabela associativa intermediária.
-- **`@JoinColumn(name = "usuario_id")`**: usada no lado "dono" da relação (geralmente o lado `@ManyToOne`) para definir o nome da coluna de chave estrangeira.
-
-O lado que possui `@JoinColumn` é o lado "dono" do relacionamento — é ele que efetivamente controla a chave estrangeira no banco.
-
----
-
-### 8.5 Estratégias de Carregamento: LAZY vs. EAGER
-
-Toda relação entre entidades define **quando** os dados relacionados são carregados do banco:
-
-- **`FetchType.LAZY`** (padrão em `@OneToMany` e `@ManyToMany`): os dados relacionados só são carregados quando efetivamente acessados no código. Mais eficiente, evita carregar dados desnecessários.
-- **`FetchType.EAGER`** (padrão em `@ManyToOne` e `@OneToOne`): os dados relacionados são carregados **junto** com a entidade principal, na mesma consulta (ou em consultas adicionais imediatas).
-
-Um cuidado importante aqui é o **problema N+1**: ao buscar uma lista de `N` entidades que têm relações `LAZY` acessadas em seguida, o Hibernate pode disparar 1 consulta para a lista + N consultas adicionais (uma para cada relação acessada), em vez de uma única consulta otimizada. Esse problema é resolvido com `JOIN FETCH` em consultas customizadas (seção 8) quando necessário.
-
----
-
-### 8.6 Repositórios do Spring Data JPA
-
-Em vez de escrever manualmente uma classe de acesso a dados, o Spring Data JPA gera a implementação a partir de uma **interface**. A hierarquia principal é:
-
-- **`CrudRepository<T, ID>`**: fornece as operações básicas de CRUD (`save`, `findById`, `findAll`, `deleteById`, etc.).
-- **`PagingAndSortingRepository<T, ID>`**: estende o `CrudRepository`, adicionando suporte a paginação (`Pageable`) e ordenação (`Sort`).
-- **`JpaRepository<T, ID>`**: a interface mais usada na prática — estende `PagingAndSortingRepository`, adicionando métodos específicos do JPA (ex.: `flush()`, `saveAndFlush()`, versões em lote de operações).
+### 8.3 Mapeando Rotas por Verbo HTTP
 
 ```java
-public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
+@GetMapping                  // GET    /tarefas
+@GetMapping("/{id}")         // GET    /tarefas/{id}
+@PostMapping                 // POST   /tarefas
+@PutMapping("/{id}")         // PUT    /tarefas/{id}      (substitui)
+@PatchMapping("/{id}")       // PATCH  /tarefas/{id}      (parcial)
+@DeleteMapping("/{id}")      // DELETE /tarefas/{id}
+```
+
+### 8.4 Extraindo Dados da Requisição
+
+- **`@PathVariable`**: valor da URL. `/tarefas/{id}` → `@PathVariable Long id`.
+- **`@RequestParam`**: query parameter. `/tarefas?concluida=true` → `@RequestParam Boolean concluida`. Opcional com `required = false` ou `defaultValue`.
+- **`@RequestBody`**: converte o JSON do corpo em um objeto Java (via `HttpMessageConverter`). Para `POST`/`PUT`/`PATCH`.
+- **`@RequestHeader`**: lê um cabeçalho. `@RequestHeader("Accept-Language") String idioma`.
+
+---
+
+## 3. DTOs: Não Exponha Entidades
+
+Receber `@RequestBody Tarefa` ou devolver `ResponseEntity<Tarefa>` funciona em um exemplo de dois minutos, mas é um **anti-padrão** em qualquer projeto real:
+
+1. **Acopla a API ao banco:** renomear uma coluna muda o contrato que o front-end consome.
+2. **Recursão infinita no JSON:** `Usuario` tem `tarefas` e `Tarefa` tem `usuario`; o Jackson serializa um dentro do outro até estourar a pilha (`StackOverflowError`).
+3. **Vazamento de dados:** a entidade `Usuario` terá o hash da senha (Unidade IX); serializá-la o exporia.
+4. **Mass assignment:** o cliente poderia enviar `"id"` ou `"concluida"` no JSON e sobrescrever campos que ele não deveria controlar.
+5. **`LazyInitializationException`:** serializar a entidade fora da transação tenta carregar relações `LAZY` (Unidade VII).
+
+A solução é um **DTO** (*Data Transfer Object*): uma classe própria para a entrada e outra para a saída. Com Records (Unidade III) ficam curtos:
+
+```java
+// entrada: só o que o cliente pode mandar
+public record TarefaRequest(
+        @NotBlank(message = "O título é obrigatório")
+        @Size(max = 150, message = "O título deve ter no máximo 150 caracteres")
+        String titulo,
+
+        String descricao,
+
+        @NotNull(message = "O usuário é obrigatório")
+        Long usuarioId,
+
+        @FutureOrPresent(message = "O prazo não pode estar no passado")
+        LocalDate prazo,
+
+        Prioridade prioridade
+) { }
+
+// saída: só o que a API decide expor
+public record TarefaResponse(
+        Long id, String titulo, String descricao, boolean concluida,
+        Long usuarioId, LocalDate prazo, Prioridade prioridade
+) {
+    public static TarefaResponse de(Tarefa t) {
+        return new TarefaResponse(t.getId(), t.getTitulo(), t.getDescricao(), t.isConcluida(),
+                t.getUsuario().getId(),
+                t instanceof TarefaComPrazo cp ? cp.getPrazo() : null,
+                t instanceof TarefaComPrazo cp ? cp.getPrioridade() : null);
+    }
 }
 ```
 
-Só com essa declaração (sem nenhuma implementação escrita por você), já é possível usar `tarefaRepository.save(tarefa)`, `tarefaRepository.findById(1L)`, `tarefaRepository.findAll()`, entre outros — o Spring Data JPA gera a implementação real em tempo de execução (via *proxy*).
+O **Service** recebe o `TarefaRequest`, decide se cria uma `Tarefa` simples ou uma `TarefaComPrazo` (conforme `prazo` e `prioridade` vieram preenchidos), salva e devolve o `TarefaResponse`. Assim, a entidade **nunca sai do Service**. Isso também resolve o `usuarioId` do payload: o Service busca o `Usuario` e o associa.
+
+Para listas, mapeie com stream: `tarefas.stream().map(TarefaResponse::de).toList()`.
 
 ---
 
-### 8.7 Escrevendo Consultas Personalizadas
+## 4. Formatando a Resposta: `ResponseEntity`
 
-Quando os métodos prontos do `JpaRepository` não são suficientes, existem três formas principais de consultar dados:
-
-#### 8.7.1 Query Methods (Consultas Derivadas do Nome)
-
-O Spring Data JPA interpreta o **nome do método** e gera a consulta automaticamente, sem precisar escrever nada além da assinatura:
+Retornar um objeto direto sempre devolve `200 OK`. Para controlar **status code** e **headers**, use `ResponseEntity<T>`:
 
 ```java
-List<Tarefa> findByConcluida(boolean concluida);
-List<Tarefa> findByDescricaoContainingIgnoreCase(String texto);
-List<Tarefa> findByUsuarioIdOrderByDataCriacaoDesc(Long usuarioId);
-```
+@GetMapping("/{id}")
+public TarefaResponse buscar(@PathVariable Long id) {
+    return service.buscarPorId(id);   // o Service lança TarefaNaoEncontradaException se não existir
+}
 
-Palavras-chave como `findBy`, `And`, `Or`, `Containing`, `OrderBy`, `GreaterThan` seguem uma convenção que o Spring Data JPA traduz automaticamente em SQL.
+@PostMapping
+public ResponseEntity<TarefaResponse> criar(@Valid @RequestBody TarefaRequest request) {
+    TarefaResponse criada = service.criar(request);
 
-#### 8.7.2 `@Query` (JPQL ou SQL Nativo)
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(criada.id())
+            .toUri();
 
-Para consultas mais complexas, é possível escrever a query manualmente usando **JPQL** (uma linguagem parecida com SQL, mas que opera sobre entidades e atributos Java, não sobre tabelas e colunas):
+    return ResponseEntity.created(location).body(criada);       // 201 + header Location
+}
 
-```java
-@Query("SELECT t FROM Tarefa t WHERE t.concluida = false AND t.usuario.id = :usuarioId")
-List<Tarefa> buscarPendentesPorUsuario(@Param("usuarioId") Long usuarioId);
-```
-
-Também é possível usar `@Query(nativeQuery = true)` para escrever SQL nativo diretamente, quando é necessário usar algum recurso específico do banco.
-
-#### 8.7.3 `Specification` (Consultas Dinâmicas)
-
-Para casos onde os filtros variam dinamicamente (ex.: uma busca com múltiplos filtros opcionais), o Spring Data JPA oferece a interface `JpaSpecificationExecutor`, permitindo montar consultas programaticamente em vez de fixá-las em uma anotação ou nome de método. É uma técnica mais avançada, indicada quando `Query Methods` e `@Query` ficam limitados.
-
----
-
-### 8.8 Transações (`@Transactional`)
-
-Operações que envolvem múltiplas escritas no banco (ex.: salvar uma `Tarefa` e atualizar um contador no `Usuario`) devem ser tratadas como uma **transação** — ou tudo é aplicado, ou nada é (rollback em caso de erro). O Spring gerencia isso com a anotação `@Transactional`, geralmente aplicada na camada de **Service**:
-
-```java
-@Transactional
-public void concluirTarefaEAtualizarContador(Long tarefaId) {
-    // se qualquer operação aqui lançar exceção, tudo é revertido
+@DeleteMapping("/{id}")
+public ResponseEntity<Void> remover(@PathVariable Long id) {
+    service.remover(id);
+    return ResponseEntity.noContent().build();                   // 204
 }
 ```
 
+Convenções (Unidade V): `POST` bem-sucedido devolve **201** com o header `Location`; `DELETE` devolve **204** sem corpo; `GET`/`PUT`/`PATCH` devolvem **200**. Repare que o "404 quando não existe" **não** está no Controller: o Service lança a exceção e o tratamento centralizado (seção 6) a converte. Isso mantém o Controller fino.
+
+**Paginação em listagens:** receba um `Pageable` e devolva uma `Page`:
+
+```java
+@GetMapping
+public Page<TarefaResponse> listar(
+        @RequestParam(required = false) Boolean concluida,
+        @PageableDefault(size = 10, sort = "titulo") Pageable pageable) {
+    return service.listar(concluida, pageable);
+}
+// GET /tarefas?concluida=false&page=0&size=5&sort=titulo,desc
+```
+
 ---
 
-## 3. Conteúdo em Vídeo
+## 5. Validação de Dados (`@Valid`)
 
-- 🎥 [Vídeo: Dominando o Spring Data JPA](https://www.youtube.com/watch?v=XgfAabFGGj4&t=5711s&pp=ygUJc291emEgZGV2)
+A validação exige a dependência `spring-boot-starter-validation` (ela **não** vem no starter web). Combine **Bean Validation** nas classes (`@NotBlank`, `@NotNull`, `@Size`, `@Email`, `@Past`, `@Future`...) com `@Valid` no parâmetro do Controller (exemplos no `TarefaRequest` acima).
+
+Se a validação falhar, o Spring lança `MethodArgumentNotValidException` **antes** do seu código de negócio executar. A resposta de erro fica por conta do tratamento centralizado.
+
+!!! tip "Validação de formato vs. regra de negócio"
+    Bean Validation cobre **formato** (campo vazio, tamanho, e-mail válido). Regras que dependem do banco ou do contexto (e-mail já cadastrado, usuário inexistente) ficam no **Service**, que lança exceções próprias.
 
 ---
 
-## 11. Projeto Prático
+## 6. Tratamento Centralizado de Erros
 
-Aplique JpaRepository, relacionamentos e consultas personalizadas na camada de persistência do **Gerenciador de Tarefas**:
+Em vez de `try/catch` repetido em cada Controller, centralize:
 
-- 🌐 [Instruções do Mini Projeto Spring Data JPA ➔](desafio.md#mini-projeto-spring-data-jpa)
+- **`@ExceptionHandler`**: método que captura um tipo de exceção e define a resposta.
+- **`@RestControllerAdvice`** (`@ControllerAdvice` + `@ResponseBody`): aplica os handlers a **todos** os Controllers, devolvendo JSON.
+
+Para que o formato de erro seja **realmente padronizado**, use **um corpo único** para todos os erros. O Spring 6 traz o `ProblemDetail`, que implementa o padrão **RFC 9457 (Problem Details for HTTP APIs)**, com os campos `type`, `title`, `status`, `detail` e `instance`, e aceita campos extras:
+
+```java
+@RestControllerAdvice
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
+    @ExceptionHandler(RecursoNaoEncontradoException.class)
+    public ProblemDetail tratarNaoEncontrado(RecursoNaoEncontradoException ex) {
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        pd.setTitle("Recurso não encontrado");
+        return pd;
+    }
+
+    @ExceptionHandler(ConflitoException.class)       // ex.: e-mail já cadastrado
+    public ProblemDetail tratarConflito(ConflitoException ex) {
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        pd.setTitle("Conflito");
+        return pd;
+    }
+
+    // Erros de validação do @Valid: devolve o mesmo formato, com a lista de campos inválidos
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException ex, HttpHeaders headers,
+            HttpStatusCode status, WebRequest request) {
+
+        Map<String, String> erros = new LinkedHashMap<>();
+        ex.getBindingResult().getFieldErrors()
+                .forEach(e -> erros.put(e.getField(), e.getDefaultMessage()));
+
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Dados inválidos");
+        pd.setTitle("Erro de validação");
+        pd.setProperty("erros", erros);
+        return ResponseEntity.badRequest().body(pd);
+    }
+
+    // Último recurso: nunca vaza stack trace para o cliente
+    @ExceptionHandler(Exception.class)
+    public ProblemDetail tratarGenerico(Exception ex) {
+        log.error("Erro inesperado", ex);
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(
+                HttpStatus.INTERNAL_SERVER_ERROR, "Erro interno. Tente novamente mais tarde.");
+        pd.setTitle("Erro interno");
+        return pd;
+    }
+}
+```
+
+Resposta de um `POST /tarefas` com título em branco:
+
+```json
+{
+  "type": "about:blank",
+  "title": "Erro de validação",
+  "status": 400,
+  "detail": "Dados inválidos",
+  "instance": "/tarefas",
+  "erros": { "titulo": "O título é obrigatório" }
+}
+```
+
+Pontos importantes:
+
+- Estender `ResponseEntityExceptionHandler` faz o handler genérico `Exception` **não** engolir exceções do próprio Spring (método HTTP não suportado, JSON malformado...), que continuam com o status correto.
+- Crie uma classe base (`RecursoNaoEncontradoException`) da qual `UsuarioNaoEncontradoException`, `TarefaNaoEncontradaException` etc. herdam, para ter **um handler só** para todos os 404.
+- O handler genérico é obrigatório: sem ele, qualquer bug vira uma página de erro padrão com detalhes internos.
+- Na Unidade IX você vai adicionar um handler para `AccessDeniedException` (403); sem ele, o handler genérico a transformaria em 500.
+
+---
+
+## 7. CORS
+
+Para o front-end (Unidade V, seção CORS) conseguir chamar a API, configure as origens permitidas **no back-end**:
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                .allowedHeaders("*");
+    }
+}
+```
+
+Nunca use `allowedOrigins("*")` em produção em APIs com autenticação. Liste as origens reais.
+
+---
+
+## 8. Documentando com OpenAPI (Swagger)
+
+O front-end e outros times consomem sua API pela **documentação**. A biblioteca **springdoc-openapi** gera o contrato OpenAPI e uma interface interativa a partir dos seus Controllers, sem configuração:
+
+```xml
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version><!-- use a versão estável mais recente em springdoc.org --></version>
+</dependency>
+```
+
+Ao subir a aplicação, a interface fica em `http://localhost:8080/swagger-ui.html` e o contrato em `/v3/api-docs`. Consulte [springdoc.org](https://springdoc.org) para a versão compatível com o seu Spring Boot. Você pode complementar com `@Operation(summary = "...")` e `@ApiResponse` nos métodos.
+
+---
+
+## 9. Testando a API
+
+Teste o Controller **isolado** com `@WebMvcTest` e `MockMvc`: sobe só a camada web, sem banco, com o Service substituído por um *mock*.
+
+```java
+@WebMvcTest(TarefaController.class)
+class TarefaControllerTest {
+
+    @Autowired private MockMvc mockMvc;
+
+    @MockitoBean private TarefaService service;      // @MockBean em versões do Boot anteriores à 3.4
+
+    @Test
+    void deveRetornar404QuandoTarefaNaoExiste() throws Exception {
+        when(service.buscarPorId(99L)).thenThrow(new TarefaNaoEncontradaException(99L));
+
+        mockMvc.perform(get("/tarefas/99"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.title").value("Recurso não encontrado"));
+    }
+
+    @Test
+    void deveRetornar400QuandoTituloEmBranco() throws Exception {
+        String json = """
+                { "titulo": "", "usuarioId": 1 }
+                """;
+
+        mockMvc.perform(post("/tarefas")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.erros.titulo").exists());
+    }
+}
+```
+
+Esse tipo de teste valida **rota, status code, validação e formato de erro** sem subir banco. Complemente com os testes de Service (Unidade VI) e de Repository (Unidade VII), e com a coleção do Postman da Unidade V apontada para a sua API.
+
+---
+
+## 10. Conteúdo em Vídeo
+
+- 🎥 [Vídeo: Spring Web / Spring MVC na prática](https://www.youtube.com/watch?v=YuzWGKSzEcE&t=2707s&pp=ygUJc291emEgZGV2) (começa no meio do vídeo; se o trecho não fizer sentido sozinho, assista desde o início)
+
+!!! warning "Confira a versão do vídeo"
+    Se o vídeo expõe entidades direto no Controller ou trata erros devolvendo `String`, siga o padrão deste material (DTOs e `ProblemDetail`).
+
+---
+
+## 11. Checklist de Conclusão
+
+- [ ] Descrevo o caminho de uma requisição (DispatcherServlet, Handler Mapping, conversor).
+- [ ] Explico ao menos três motivos para não expor entidades e crio `Request`/`Response` em Records.
+- [ ] Devolvo `201` + `Location` no `POST`, `204` no `DELETE` e `200` nos demais.
+- [ ] Valido a entrada com `@Valid` e recebo `400` com a lista de campos inválidos.
+- [ ] Meu `@RestControllerAdvice` devolve **o mesmo formato** (`ProblemDetail`) para 400, 404, 409 e 500.
+- [ ] Nenhum Controller tem `try/catch` de regra de negócio.
+- [ ] A API tem Swagger acessível e CORS configurado.
+- [ ] Escrevi testes com `MockMvc` para um caminho feliz e dois de erro.
+
+---
+
+## 12. Projeto Prático
+
+Construa a API REST completa do **Gerenciador de Tarefas**, sobre a persistência da Unidade VII:
+
+- 🌐 [Instruções do Mini Projeto 5: Spring Web ➔](desafio.md#mini-projeto-5)

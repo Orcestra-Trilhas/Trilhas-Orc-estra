@@ -1,12 +1,12 @@
-# Unidade III – Java (Estruturas de Dados)
+# Unidade III: Java Moderno e Estruturas de Dados
 
 ---
 
 ## 1. Visão Geral
 
-Nesta unidade intermediária, você aprenderá a trabalhar com as estruturas de dados fundamentais do Java, avançando o nível de manipulação de coleções, funções de ordem superior e novos recursos da linguagem.
+Nesta unidade você avança para a Java que se escreve hoje: coleções, **lambdas**, **Stream API**, **`Optional`**, Generics, Packages, Records e **`java.time`**.
 
-Ao final desta unidade, você será capaz de manipular coleções de forma eficiente, escrever código mais conciso com Stream API, criar código reutilizável com Generics, organizar seu projeto em pacotes e representar dados de forma imutável com Records.
+Ao final, você será capaz de manipular coleções de forma concisa e segura, organizar o projeto em pacotes, representar dados imutáveis e trabalhar com datas.
 
 ---
 
@@ -14,99 +14,257 @@ Ao final desta unidade, você será capaz de manipular coleções de forma efici
 
 ### 3.1 Collections (`List`, `Set`, `Map`)
 
-O Java organiza suas estruturas de dados em torno de três interfaces principais do pacote `java.util`, cada uma com uma regra diferente sobre como os elementos se comportam:
+O Java organiza suas estruturas de dados em torno de três interfaces do pacote `java.util`, cada uma com uma regra diferente:
 
-- **`List`** — coleção **ordenada** que permite **elementos duplicados** e acesso por índice.
-  - `ArrayList`: implementação baseada em array redimensionável; acesso rápido por índice (O(1)), inserção/remoção no meio é mais custosa.
-  - `LinkedList`: implementação baseada em lista duplamente encadeada; inserção/remoção nas pontas é rápida, mas acesso por índice é mais lento (O(n)). Também implementa `Deque`.
+- **`List`**: coleção **ordenada** que permite **duplicados** e acesso por índice.
+  - `ArrayList`: baseada em array redimensionável; acesso por índice O(1), inserção/remoção no meio mais custosa.
+  - `LinkedList`: lista duplamente encadeada; inserção/remoção nas pontas é rápida, acesso por índice é O(n). Também implementa `Deque`.
 
-- **`Set`** — coleção que **não permite elementos duplicados** e não garante acesso por índice.
-  - `HashSet`: implementação baseada em tabela hash; não mantém ordem de inserção, mas é a mais rápida para busca/inserção (O(1) em média).
+- **`Set`**: coleção que **não permite duplicados**.
+  - `HashSet`: tabela hash; sem ordem garantida; busca/inserção O(1) em média.
   - `LinkedHashSet`: como o `HashSet`, mas mantém a ordem de inserção.
-  - `TreeSet`: mantém os elementos **ordenados** (ordem natural ou via `Comparator`); operações em O(log n).
+  - `TreeSet`: mantém os elementos **ordenados** (ordem natural ou `Comparator`); O(log n).
 
-- **`Map`** — estrutura de pares **chave-valor**, onde cada chave é única (não é filha de `Collection`, é uma hierarquia à parte).
-  - `HashMap`: implementação baseada em tabela hash; não garante ordem.
+- **`Map`**: pares **chave-valor**, com chaves únicas (não é filha de `Collection`).
+  - `HashMap`: tabela hash; sem ordem garantida.
   - `LinkedHashMap`: mantém a ordem de inserção das chaves.
   - `TreeMap`: mantém as chaves ordenadas.
 
-Além dessas, existe a interface **`Queue`** (e sua extensão `Deque`), usada para representar filas (FIFO) ou filas duplas, com implementações como `ArrayDeque` e a própria `LinkedList`.
+Existe ainda a interface **`Queue`** (e `Deque`) para filas (FIFO) e filas duplas, com implementações como `ArrayDeque`.
+
+!!! warning "`HashSet` e `HashMap` dependem de `equals` e `hashCode`"
+    Essas estruturas decidem se um elemento "já existe" usando `hashCode()` e `equals()` (Unidade II, seção 4.2). Se a sua classe não sobrescreve os dois, dois objetos com os mesmos dados são tratados como **diferentes** e o `Set` aceita "duplicados". Se você sobrescreve só um, a busca falha de forma imprevisível. Esse é um dos bugs mais comuns com chaves de `Map` e elementos de `Set`.
 
 - [Vídeo: Collections em Java (List, Set, Map, Queue)](https://youtu.be/0JXjsQUoAT8?si=isWHRzmND0u8Mz1T)
 
 ---
 
-### 3.2 Stream API
+### 3.2 Lambdas e Interfaces Funcionais
 
-A Stream API é um conjunto de recursos que facilita a **manipulação de estruturas de dados** de forma funcional e declarativa, ou seja, você descreve *o que* quer fazer com os dados, sem escrever manualmente o *como* (loops, contadores, condicionais aninhadas).
+Antes da Stream API, você precisa entender o que significa `p -> p.getIdade() > 18`.
 
-O método `stream()` é um método default da interface **`Collection`** (superinterface comum de `List` e `Set`, que por sua vez estende `Iterable`). Como `Map` não é uma `Collection`, ele expõe suas próprias vias de acesso a streams: `map.keySet().stream()`, `map.values().stream()` ou `map.entrySet().stream()`.
+Uma **interface funcional** é uma interface com **um único método abstrato**. Uma **lambda** é uma forma curta de implementá-la sem criar uma classe:
 
-Toda stream segue a mesma estrutura de três partes:
+```java
+// sem lambda
+Comparator<Tarefa> porTitulo = new Comparator<>() {
+    @Override
+    public int compare(Tarefa a, Tarefa b) {
+        return a.getTitulo().compareTo(b.getTitulo());
+    }
+};
 
-**a) Fonte (Source)**
-É a origem dos dados — geralmente uma coleção (`lista.stream()`), um array (`Arrays.stream(array)`) ou valores gerados (`Stream.of(...)`). A stream em si **não armazena dados**, apenas referencia a fonte e define um pipeline de processamento.
+// com lambda
+Comparator<Tarefa> porTitulo2 = (a, b) -> a.getTitulo().compareTo(b.getTitulo());
+```
 
-**b) Operações Intermediárias**
-São operações que transformam a stream e retornam **outra stream**, permitindo encadeamento. São **preguiçosas** (lazy) — só são executadas quando uma operação terminal é chamada.
-- `filter(Predicate)`: seleciona elementos que atendem a uma condição. Ex.: `.filter(p -> p.getIdade() > 18)`.
-- `map(Function)`: transforma cada elemento em outro valor/tipo. Ex.: `.map(Pessoa::getNome)`.
-- `sorted()`: ordena os elementos da stream. Ex.: `.sorted(Comparator.comparing(Pessoa::getIdade))`.
+Sintaxe: `(parâmetros) -> expressão` ou `(parâmetros) -> { instruções; }`. O tipo dos parâmetros é inferido.
 
-**c) Operação Terminal (Terminal Operation)**
-É a operação que **consome** a stream e produz um resultado final (ou efeito colateral). Depois dela, a stream não pode mais ser reutilizada.
-- `collect(Collectors.toList())`: reúne os elementos processados em uma nova coleção.
-- `forEach(Consumer)`: executa uma ação para cada elemento restante. Ex.: `.forEach(System.out::println)`.
-- `count()` / `sum()` / `reduce()`: produzem um valor agregado a partir dos elementos da stream.
+As interfaces funcionais que você mais vai usar (pacote `java.util.function`):
+
+| Interface | Método | Para que serve | Exemplo |
+| :--- | :--- | :--- | :--- |
+| `Predicate<T>` | `boolean test(T t)` | testar uma condição | `t -> t.isConcluida()` |
+| `Function<T, R>` | `R apply(T t)` | transformar T em R | `t -> t.getTitulo()` |
+| `Consumer<T>` | `void accept(T t)` | executar uma ação | `t -> System.out.println(t)` |
+| `Supplier<T>` | `T get()` | fornecer um valor | `() -> new ArrayList<>()` |
+| `Comparator<T>` | `int compare(T a, T b)` | comparar para ordenar | `(a, b) -> a.getId().compareTo(b.getId())` |
+
+**Referências a método** (`::`) são atalhos quando a lambda só chama um método existente:
+
+| Forma | Lambda equivalente |
+| :--- | :--- |
+| `Tarefa::getTitulo` | `t -> t.getTitulo()` |
+| `System.out::println` | `x -> System.out.println(x)` |
+| `ArrayList::new` | `() -> new ArrayList<>()` |
+| `String::valueOf` | `x -> String.valueOf(x)` |
+
+---
+
+### 3.3 Stream API
+
+A Stream API facilita a manipulação de coleções de forma **declarativa**: você descreve *o que* quer, sem escrever o *como* (laços, contadores, condicionais aninhadas).
+
+O método `stream()` é um método default de **`Collection`** (superinterface de `List` e `Set`). Como `Map` não é uma `Collection`, use `map.keySet().stream()`, `map.values().stream()` ou `map.entrySet().stream()`.
+
+Toda stream tem três partes:
+
+**a) Fonte (Source):** `lista.stream()`, `Arrays.stream(array)`, `Stream.of(...)`. A stream **não armazena dados**, só define um pipeline sobre a fonte.
+
+**b) Operações intermediárias:** transformam a stream e retornam **outra stream**. São **preguiçosas** (lazy): só executam quando há uma operação terminal.
+- `filter(Predicate)`: `.filter(t -> !t.isConcluida())`
+- `map(Function)`: `.map(Tarefa::getTitulo)`
+- `sorted(Comparator)`: `.sorted(Comparator.comparing(Tarefa::getTitulo))`
+
+**c) Operação terminal:** **consome** a stream e produz o resultado. Depois dela, a stream não pode ser reutilizada.
+- `toList()`: reúne em uma lista (Java 16+). É mais curto que `collect(Collectors.toList())`, mas devolve uma lista **imutável** (chamar `add` nela lança `UnsupportedOperationException`).
+- `collect(Collectors.toList())` / `collect(Collectors.groupingBy(...))`: reúne em coleções ou agrupa.
+- `forEach(Consumer)`, `count()`, `sum()`, `reduce()`, `anyMatch(Predicate)`, `findFirst()`.
+
+```java
+List<String> pendentes = tarefas.stream()
+        .filter(t -> !t.isConcluida())
+        .sorted(Comparator.comparing(Tarefa::getTitulo))
+        .map(Tarefa::getTitulo)
+        .toList();
+
+Map<Boolean, Long> contagem = tarefas.stream()
+        .collect(Collectors.partitioningBy(Tarefa::isConcluida, Collectors.counting()));
+```
+
+Para ordenar por mais de um critério, encadeie: `Comparator.comparing(Tarefa::getTitulo).thenComparing(Tarefa::getId)`.
 
 - [Vídeo: Stream API em Java (fonte, operações intermediárias e terminais)](https://www.youtube.com/watch?v=iovHVVwgfYo)
 
 ---
 
-### 3.3 Generics
+### 3.4 Optional
 
-Generics permitem que classes, interfaces e métodos operem sobre **tipos parametrizados** (`<T>`, `<E>`, `<K, V>`), definidos apenas no momento do uso, em vez de fixados na implementação.
+`Optional<T>` é uma "caixa" que pode ou não conter um valor. Existe para **evitar `null` e `NullPointerException`** em retornos que podem ser vazios. Você vai vê-lo em todo lugar: `repository.findById(id)` devolve um `Optional`.
 
-Isso resolve dois problemas: evita a necessidade de duplicar código para cada tipo (ex.: uma `ListaDeInteiros` e uma `ListaDeStrings` separadas) e garante **segurança de tipos em tempo de compilação** — sem Generics, seria preciso usar `Object` e fazer casts manuais, correndo risco de `ClassCastException` em tempo de execução.
+```java
+Optional<Tarefa> achada = tarefas.stream()
+        .filter(t -> t.getId().equals(42L))
+        .findFirst();
 
-Exemplo: `List<String> nomes = new ArrayList<>();` garante, em tempo de compilação, que só `String` pode ser inserida ali. O mesmo mecanismo é usado em classes próprias, como `class Caixa<T> { private T conteudo; }`, e em métodos genéricos, como `<T> T primeiroElemento(List<T> lista)`.
+achada.isPresent();                                  // true/false
+achada.ifPresent(t -> System.out.println(t));        // executa só se houver valor
+String titulo = achada.map(Tarefa::getTitulo)        // transforma, se houver valor
+                      .orElse("(sem título)");       // valor padrão
+Tarefa t = achada.orElseThrow(() -> new TarefaNaoEncontradaException(42L));
+```
+
+Regras práticas:
+- Para "não achou, então erro", use `orElseThrow(...)`. É o padrão em services.
+- `orElse(x)` **sempre avalia** `x`, mesmo que haja valor. Para valores caros de criar, use `orElseGet(() -> ...)`.
+- Não use `Optional` como atributo de classe nem como parâmetro de método. Ele é para **retornos**.
+- Evite `optional.get()` sem checar: é um `NullPointerException` disfarçado.
+
+---
+
+### 3.5 Generics
+
+Generics permitem que classes, interfaces e métodos operem sobre **tipos parametrizados** (`<T>`, `<E>`, `<K, V>`), definidos apenas no uso.
+
+Resolvem dois problemas: evitam duplicar código para cada tipo (uma `ListaDeInteiros` e uma `ListaDeStrings`) e garantem **segurança de tipos em tempo de compilação**. Sem Generics, você usaria `Object` e casts manuais, com risco de `ClassCastException` em execução.
+
+```java
+List<String> nomes = new ArrayList<>();      // só aceita String
+
+class Caixa<T> { private T conteudo; }
+
+<T> T primeiroElemento(List<T> lista) { return lista.get(0); }
+```
+
+Você vai reconhecer Generics em `JpaRepository<Tarefa, Long>` (entidade e tipo do ID) e `ResponseEntity<TarefaResponse>`.
 
 - [Vídeo: Generics em Java](https://youtu.be/OAk6MjD96gM?si=R8p8JT2oRngYklbc)
 
 ---
 
-### 3.4 Packages
+### 3.6 Packages
 
-Packages são o mecanismo do Java para **organizar classes em uma estrutura hierárquica de pastas/namespaces**, geralmente seguindo o padrão de domínio invertido (ex.: `com.empresa.projeto.modulo`).
+Packages organizam classes em uma hierarquia de pastas/namespaces, geralmente em domínio invertido (`com.orcestra.tarefas.service`).
 
-Além de organizar o código, packages resolvem **conflitos de nomes** (duas classes `Usuario` podem coexistir em pacotes diferentes) e controlam a **visibilidade** entre classes: um membro sem modificador de acesso (visibilidade *default*/package-private) só é visível dentro do mesmo pacote, o que é útil para encapsular detalhes internos de um módulo.
+Além de organizar, resolvem **conflitos de nomes** (duas classes `Usuario` em pacotes diferentes) e controlam **visibilidade**: um membro sem modificador (*package-private*) só é visível dentro do mesmo pacote.
+
+Nos projetos Spring, os pacotes seguem as camadas:
+
+```text
+com.orcestra.tarefas
+├── controller
+├── service
+├── repository
+├── model
+├── dto
+└── exception
+```
 
 - [Vídeo: Packages em Java (organização e visibilidade)](https://youtu.be/rRfas9Q95U0?si=Qv0KjZSISz41PEfs)
 
 ---
 
-### 3.5 Records
+### 3.7 Records
 
-Records, introduzidos como recurso estável a partir do Java 16, são um tipo especial de classe pensado para representar **dados imutáveis** de forma concisa.
+Records (estáveis desde o Java 16) representam **dados imutáveis** de forma concisa.
 
-Ao declarar `record Ponto(int x, int y) {}`, o compilador gera automaticamente: construtor com todos os campos, métodos de acesso (`x()`, `y()` — sem o prefixo `get`), além de `equals()`, `hashCode()` e `toString()` já implementados de forma coerente com os dados. Isso elimina o código repetitivo (*boilerplate*) que antes era necessário escrever manualmente ou gerar com bibliotecas como o Lombok.
+```java
+public record TarefaResumo(Long id, String titulo, boolean concluida) {}
+```
 
-Records são ideais para modelar objetos de transferência de dados (DTOs), respostas de API ou qualquer estrutura onde o estado não deve mudar após a criação.
+O compilador gera: construtor com todos os campos, acessores (`id()`, `titulo()`, sem prefixo `get`), `equals()`, `hashCode()` e `toString()`.
+
+Podem ter validação no construtor compacto e métodos próprios:
+
+```java
+public record TarefaResumo(Long id, String titulo, boolean concluida) {
+    public TarefaResumo {
+        if (titulo == null || titulo.isBlank()) {
+            throw new IllegalArgumentException("Título obrigatório");
+        }
+    }
+}
+```
+
+**Onde usar Record:** DTOs (objetos de entrada e saída de API), respostas, qualquer estrutura cujo estado não muda depois de criada.
+
+**Onde NÃO usar:** **entidades JPA** (Unidade VII). O JPA precisa de construtor sem argumentos e de objetos mutáveis, e Records são imutáveis. Por isso a trilha adota esta divisão: *entidades* são classes comuns; *DTOs* são Records. Com Records para DTOs, a trilha **não exige Lombok**.
 
 - [Vídeo: Records em Java (imutabilidade e boilerplate)](https://youtu.be/lmzpyCNyziI?si=Sv0WEc0w-cRKgJMM)
 
 ---
 
-## 3. Aprofundamento Recomendado
+### 3.8 Datas e Horas (`java.time`)
 
-Caso queira dominar ainda mais os detalhes específicos e avançados do Java:
+Nunca use `java.util.Date` em código novo. Use o pacote `java.time`:
+
+| Tipo | Representa | Exemplo |
+| :--- | :--- | :--- |
+| `LocalDate` | data, sem hora | `2026-12-31` |
+| `LocalDateTime` | data e hora, sem fuso | `2026-12-31T18:30:00` |
+| `Instant` | momento exato na linha do tempo (UTC) | para timestamps |
+| `Duration` / `Period` | intervalo de tempo / de datas | |
+
+```java
+LocalDate hoje = LocalDate.now();
+LocalDate prazo = LocalDate.of(2026, 12, 31);
+
+boolean atrasada = prazo.isBefore(hoje);
+LocalDate daquiA7Dias = hoje.plusDays(7);
+long diasRestantes = ChronoUnit.DAYS.between(hoje, prazo);
+
+DateTimeFormatter br = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String texto = prazo.format(br);                    // "31/12/2026"
+LocalDate lida = LocalDate.parse("31/12/2026", br);
+```
+
+Os objetos de `java.time` são **imutáveis**: `plusDays` devolve um objeto novo. Em JSON, o Spring Boot converte `LocalDate` de/para o formato ISO (`"2026-12-31"`). Esse será o tipo do `prazo` da `TarefaComPrazo`.
+
+- Material oficial: [java.time no dev.java](https://dev.java/learn/date-time/)
+
+---
+
+## 3. Aprofundamento Recomendado
 
 - 🎥 [Vídeo: Maratona Java Virado No Jiraya (Playlist Completa)](https://www.youtube.com/watch?v=VKjFuX91G5Q&list=PL62G310vn6nFIsOCC0H-C2infYgwm8SWW)
 
 ---
 
-## 4. Evolução do Projeto Prático
+## 4. Checklist de Conclusão
 
-A partir do conteúdo aprendido, aprimore o **Gerenciador de Tarefas no Terminal** adicionando buscas, filtros e manipulação de listas:
+- [ ] Escolho entre `List`, `Set` e `Map` justificando a escolha.
+- [ ] Explico por que um `HashSet<Usuario>` aceita "duplicados" quando falta `equals`/`hashCode`.
+- [ ] Converto uma lambda em referência a método e vice-versa.
+- [ ] Escrevo um pipeline `filter` + `sorted` + `map` + `toList()` sem ajuda.
+- [ ] Uso `Optional` com `orElseThrow` e explico a armadilha do `orElse`.
+- [ ] Crio um Record para DTO e explico por que ele não serve como entidade JPA.
+- [ ] Calculo quantos dias faltam para um prazo com `LocalDate`.
+- [ ] Meu projeto está dividido em pacotes.
 
-- 🌐 [Instruções do Mini Projeto Parte 2: Estruturas de Dados ➔](desafio.md#parte-2-estruturas-de-dados-desafios-de-manipulacao-de-listas)
+---
+
+## 5. Evolução do Projeto Prático
+
+Aprimore o **Gerenciador de Tarefas no Terminal** com buscas, filtros, ordenação e estatísticas:
+
+- 🌐 [Instruções do Mini Projeto 1, Parte 2 ➔](desafio.md#mini-projeto-1-parte-2)
