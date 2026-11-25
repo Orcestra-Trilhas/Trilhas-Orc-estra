@@ -1,0 +1,5185 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Portal centralizado das trilhas de conhecimento da Orc’estra.">
+      
+      
+        <meta name="author" content="Paulo">
+      
+      
+      
+        <link rel="prev" href="../unidade-7/">
+      
+      
+        <link rel="next" href="../../trilha-devops/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Desafios Práticos - Trilhas de Capacitação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#central-de-projetos-e-desafios-back-end" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Trilhas de Capacitação" class="md-header__button md-logo" aria-label="Trilhas de Capacitação" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Trilhas de Capacitação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desafios Práticos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trilha-frontend/" class="md-tabs__link">
+          
+  
+  
+  Front-end
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Back-end
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trilha-devops/" class="md-tabs__link">
+          
+  
+  
+  DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trilha-figma/" class="md-tabs__link">
+          
+  
+  
+  Design (Figma)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trilha-gamificacao/" class="md-tabs__link">
+          
+  
+  
+  Gamificação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../trilha-mobile/" class="md-tabs__link">
+          
+  
+  
+  Trilhas Complementares
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Trilhas de Capacitação" class="md-nav__button md-logo" aria-label="Trilhas de Capacitação" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Trilhas de Capacitação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Front-end
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Front-end
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – HTML & CSS Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – HTML & CSS Intermediário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – HTML & CSS Avançado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V – JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/unidade-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade VI – React
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-frontend/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back-end
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back-end
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – Java POO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – Estruturas de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – Banco de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V – Métodos HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade VI – Spring Boot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidade-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade VII – Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-convencoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Convenções Gerais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. Convenções Gerais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-dominio-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Domínio de Referência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-dependencias-permitidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 Dependências Permitidas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-estrutura-do-repositorio-e-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Estrutura do Repositório e Entrega
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.3 Estrutura do Repositório e Entrega">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-padrao-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura padrão do repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapa-desafio-pasta-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa: desafio → pasta de entrega
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regras-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras de nomenclatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-interna-de-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura interna de cada projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onde-entregar-cada-artefato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onde entregar cada artefato
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-entre-projetos-04-05-06-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução entre projetos (04 → 05 → 06 → 07)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-de-git-repita-para-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Git (repita para cada projeto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-nunca-vai-para-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que nunca vai para o repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-de-readmemd-de-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo de README.md de projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-criterios-de-avaliacao-valem-para-todos-os-projetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 Critérios de Avaliação (valem para todos os projetos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividade 0: Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade 0: Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mini Projeto 1: POO e Terminal (Gerenciador de Tarefas)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Mini Projeto 1: POO e Terminal (Gerenciador de Tarefas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-1-requisitos-basicos-de-poo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte 1: Requisitos Básicos de POO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 1: Requisitos Básicos de POO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceções
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-projeto-maven-sem-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (projeto Maven, sem Spring)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menu-do-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menu do Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-projeto-1-parte-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte 2: Estruturas de Dados e Manipulação de Listas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mini Projeto 2: Modelagem do Banco de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mini Projeto 2: Modelagem do Banco de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-1-modelagem-conceitual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 1: Modelagem Conceitual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-2-modelagem-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 2: Modelagem Lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-3-modelagem-fisica-h2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 3: Modelagem Física (H2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-4-exercicios-de-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 4: Exercícios de SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividade 3: Coleção Postman e HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade 3: Coleção Postman e HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mini Projeto 3: Esqueleto Spring Boot em Camadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mini Projeto 3: Esqueleto Spring Boot em Camadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mini Projeto 4: Persistência com Spring Data JPA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mini Projeto 4: Persistência com Spring Data JPA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mini Projeto 5: API REST com Spring Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mini Projeto 5: API REST com Spring Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependências
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuários (/usuarios)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefas-tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefas (/tarefas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (/tags)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Projeto Final: Spring Security e Autenticação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Projeto Final: Spring Security e Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-entrega-e-revisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Entrega e Revisão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Entrega e Revisão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checklist-final-de-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist final de cada projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-revisao-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como a revisão funciona
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Fundamentos de SO & Redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – Versionamento & Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – Contêineres, Cloud & DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – Troubleshooting & Formações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-devops/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design (Figma)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design (Figma)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Fundamentos & Ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – Auto Layout & Responsividade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – Componentização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – Prototipagem & Dev Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-figma/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gamificação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gamificação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I - Fundamentos da Gamificação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II - O Problema e o Contexto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III - Tipos de Jogadores e Psicologia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV - Design e Criação da Jornada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V - Prototipação, Teste e PGG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-gamificacao/material-complementar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materiais Complementares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trilhas Complementares
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trilhas Complementares
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mobile
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Fundamentos Mobile & Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – JavaScript & TypeScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – React Native Primeiros Passos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – React Native Navegação & Estado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V – React Native APIs & Recursos Nativos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/unidade-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade VI – Lynx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-mobile/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eletrônica & Embarcados
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eletrônica & Embarcados
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Fundamentos & Instrumentação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – ESP32 & Raspberry Pi Pico 2W
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – Programação MicroPython & Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – GPIOs, Sensores & Atuadores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V – Protocolos & IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/unidade-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade VI – PCB no KiCad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-embarcados/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LinkedIn
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/unidade-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade I – Fundamentos, Identidade & Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/unidade-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II – Otimização & Headline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/unidade-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III – Experiências & Destaques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/unidade-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV – Networking Estratégico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/unidade-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade V – Produção de Conteúdo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trilha-linkedin/desafio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafios Práticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-convencoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Convenções Gerais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. Convenções Gerais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-dominio-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Domínio de Referência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-dependencias-permitidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 Dependências Permitidas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-estrutura-do-repositorio-e-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Estrutura do Repositório e Entrega
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.3 Estrutura do Repositório e Entrega">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-padrao-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura padrão do repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapa-desafio-pasta-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa: desafio → pasta de entrega
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regras-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras de nomenclatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-interna-de-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura interna de cada projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onde-entregar-cada-artefato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onde entregar cada artefato
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-entre-projetos-04-05-06-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolução entre projetos (04 → 05 → 06 → 07)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-de-git-repita-para-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Git (repita para cada projeto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-nunca-vai-para-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que nunca vai para o repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-de-readmemd-de-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo de README.md de projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-criterios-de-avaliacao-valem-para-todos-os-projetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 Critérios de Avaliação (valem para todos os projetos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividade 0: Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade 0: Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mini Projeto 1: POO e Terminal (Gerenciador de Tarefas)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Mini Projeto 1: POO e Terminal (Gerenciador de Tarefas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-1-requisitos-basicos-de-poo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte 1: Requisitos Básicos de POO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 1: Requisitos Básicos de POO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceções
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-projeto-maven-sem-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (projeto Maven, sem Spring)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menu-do-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menu do Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-projeto-1-parte-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte 2: Estruturas de Dados e Manipulação de Listas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mini Projeto 2: Modelagem do Banco de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mini Projeto 2: Modelagem do Banco de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-1-modelagem-conceitual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 1: Modelagem Conceitual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-2-modelagem-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 2: Modelagem Lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-3-modelagem-fisica-h2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 3: Modelagem Física (H2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-4-exercicios-de-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 4: Exercícios de SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividade 3: Coleção Postman e HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade 3: Coleção Postman e HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mini Projeto 3: Esqueleto Spring Boot em Camadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mini Projeto 3: Esqueleto Spring Boot em Camadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mini Projeto 4: Persistência com Spring Data JPA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mini Projeto 4: Persistência com Spring Data JPA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mini Projeto 5: API REST com Spring Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mini Projeto 5: API REST com Spring Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependências
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuários (/usuarios)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarefas-tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarefas (/tarefas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (/tags)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos de Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Projeto Final: Spring Security e Autenticação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Projeto Final: Spring Security e Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-aceite_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critérios de Aceite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-entrega-e-revisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Entrega e Revisão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Entrega e Revisão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checklist-final-de-cada-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist final de cada projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-a-revisao-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como a revisão funciona
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="central-de-projetos-e-desafios-back-end">Central de Projetos e Desafios: Back-end</h1>
+<hr />
+<p>Esta página reúne os projetos práticos da Trilha de Back-end. Eles formam <strong>um único sistema que evolui</strong>: o <strong>Gerenciador de Tarefas</strong> nasce como um programa de terminal e termina como uma API REST segura, com banco de dados, testes e documentação.</p>
+<p>Cada projeto usa <strong>somente o que as unidades anteriores ensinaram</strong>. Se um projeto exigir algo que você não viu, avise: é falha da trilha, não sua.</p>
+<hr />
+<h2 id="0-convencoes-gerais">0. Convenções Gerais</h2>
+<h3 id="01-dominio-de-referencia">0.1 Domínio de Referência</h3>
+<p>Todos os projetos usam o mesmo domínio e os mesmos nomes, <strong>em português</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidade</th>
+<th style="text-align: left;">Atributos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Usuario</code></td>
+<td style="text-align: left;"><code>id</code>, <code>nome</code>, <code>email</code> (único), <code>tarefas</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Perfil</code> (1:1 com <code>Usuario</code>)</td>
+<td style="text-align: left;"><code>id</code>, <code>bio</code>, <code>telefone</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Tarefa</code></td>
+<td style="text-align: left;"><code>id</code>, <code>titulo</code> (obrigatório), <code>descricao</code>, <code>concluida</code>, <code>usuario</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>TarefaComPrazo</code> (herda de <code>Tarefa</code>)</td>
+<td style="text-align: left;"><code>prazo</code> (<code>LocalDate</code>), <code>prioridade</code> (<code>Prioridade</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Tag</code> (N:N com <code>Tarefa</code>)</td>
+<td style="text-align: left;"><code>id</code>, <code>nome</code> (único)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Prioridade</code> (enum)</td>
+<td style="text-align: left;"><code>BAIXA</code>, <code>MEDIA</code>, <code>ALTA</code></td>
+</tr>
+</tbody>
+</table>
+<p>Rotas da API usam o plural em português: <code>/usuarios</code>, <code>/tarefas</code>, <code>/tags</code>. <strong>Não</strong> misture <code>Task</code>/<code>Tarefa</code> nem <code>titulo</code>/<code>title</code>.</p>
+<h3 id="02-dependencias-permitidas">0.2 Dependências Permitidas</h3>
+<ul>
+<li><strong>Lombok é opcional.</strong> Se usar, siga os cuidados da Unidade VII (nada de <code>@Data</code> em entidades).</li>
+<li><strong>DTOs são Records</strong> (Unidade III).</li>
+<li>Entidades são classes comuns.</li>
+</ul>
+<h3 id="03-estrutura-do-repositorio-e-entrega">0.3 Estrutura do Repositório e Entrega</h3>
+<p>Cada membro tem <strong>um repositório individual</strong> com uma pasta para cada área de capacitação. Cada membro faz uma capacitação por semestre, na área que escolher, e <strong>todo o desenvolvimento e a conclusão dos desafios da trilha de Back-end ficam dentro da pasta <code>backend/</code></strong> do próprio repositório. Não altere as pastas das outras áreas.</p>
+<blockquote>
+<p>Estes desafios são <strong>exclusivos da trilha</strong> (aprendizagem dos conceitos das unidades). Eles não têm relação com os desafios semanais e <strong>não</strong> vão para o repositório dos desafios semanais.</p>
+</blockquote>
+<h4 id="estrutura-padrao-do-repositorio">Estrutura padrão do repositório</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>repositorio-do-membro/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── README.md                          # apresentação e progresso geral
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── .gitignore                         # único, na raiz
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .github/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── pull_request_template.md       # modelo de Pull Request
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── backend/                           # &lt;- tudo da trilha de Back-end fica aqui
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── README.md                      # tabela de progresso da trilha
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── 00-atividade-ambiente/
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── 01-mini-projeto-poo-terminal/
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├── 02-mini-projeto-modelagem-bd/
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├── 03-atividade-http-postman/
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   ├── 04-mini-projeto-spring-boot/
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   ├── 05-mini-projeto-spring-data-jpa/
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   ├── 06-mini-projeto-spring-web/
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   └── 07-projeto-final-spring-security/
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── design/
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── devops/
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>├── front/
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>├── gamificacao/
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>└── mobile/
+</span></code></pre></div>
+<p>As pastas das áreas em que você não está se capacitando no semestre ficam vazias (use um arquivo <code>.gitkeep</code>).</p>
+<h4 id="mapa-desafio-pasta-de-entrega">Mapa: desafio → pasta de entrega</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Desafio</th>
+<th style="text-align: left;">Pasta de entrega (dentro de <code>backend/</code>)</th>
+<th style="text-align: left;">Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Atividade 0: Ambiente</td>
+<td style="text-align: left;"><code>00-atividade-ambiente/</code></td>
+<td style="text-align: left;">projeto Maven</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mini Projeto 1: POO e Terminal</td>
+<td style="text-align: left;"><code>01-mini-projeto-poo-terminal/</code></td>
+<td style="text-align: left;">projeto Maven (sem Spring)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mini Projeto 2: Modelagem do BD</td>
+<td style="text-align: left;"><code>02-mini-projeto-modelagem-bd/</code></td>
+<td style="text-align: left;">documentos e SQL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Atividade 3: Postman e HTTP</td>
+<td style="text-align: left;"><code>03-atividade-http-postman/</code></td>
+<td style="text-align: left;">coleção e README</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mini Projeto 3: Spring Boot</td>
+<td style="text-align: left;"><code>04-mini-projeto-spring-boot/</code></td>
+<td style="text-align: left;">projeto Spring Boot</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mini Projeto 4: Spring Data JPA</td>
+<td style="text-align: left;"><code>05-mini-projeto-spring-data-jpa/</code></td>
+<td style="text-align: left;">projeto Spring Boot</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mini Projeto 5: Spring Web</td>
+<td style="text-align: left;"><code>06-mini-projeto-spring-web/</code></td>
+<td style="text-align: left;">projeto Spring Boot</td>
+</tr>
+<tr>
+<td style="text-align: left;">Projeto Final: Spring Security</td>
+<td style="text-align: left;"><code>07-projeto-final-spring-security/</code></td>
+<td style="text-align: left;">projeto Spring Boot</td>
+</tr>
+</tbody>
+</table>
+<p>O prefixo numérico da pasta segue a <strong>ordem de execução</strong> da trilha e é diferente do número do desafio (por exemplo, o Mini Projeto 3 fica em <code>04-...</code>). Use <strong>exatamente</strong> estes nomes.</p>
+<h4 id="regras-de-nomenclatura">Regras de nomenclatura</h4>
+<ul>
+<li>Pastas e arquivos em <strong>minúsculas, sem acentos, sem espaços</strong>, separados por hífen (<code>kebab-case</code>). Exceções: <code>README.md</code>, <code>pom.xml</code> e arquivos gerados pelo Maven/Spring.</li>
+<li>Pacote Java base: <code>com.orcestra.tarefas</code>. <code>groupId</code> Maven: <code>com.orcestra</code>.</li>
+<li><strong>Cada pasta de projeto é autocontida</strong>: o <code>pom.xml</code> fica na raiz da pasta do projeto (não na raiz do repositório). Abra <strong>a pasta do projeto</strong> na IDE, não o repositório inteiro.</li>
+</ul>
+<h4 id="estrutura-interna-de-cada-projeto">Estrutura interna de cada projeto</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>backend/05-mini-projeto-spring-data-jpa/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── README.md                  # obrigatório (modelo abaixo)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── pom.xml
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── mvnw, mvnw.cmd, .mvn/      # Maven Wrapper (projetos Spring Boot)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── src/
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── main/
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   │   ├── java/com/orcestra/tarefas/...
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   │   └── resources/         # application.properties
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   └── test/
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│       └── java/com/orcestra/tarefas/...
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── docs/                      # prints, diagramas, relatórios de diagnóstico
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── sql/                       # scripts SQL (quando houver)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>└── postman/                   # coleções exportadas (quando houver)
+</span></code></pre></div>
+<p><code>docs/</code>, <code>sql/</code> e <code>postman/</code> só existem nos projetos que têm esses artefatos. <code>src/test/java</code> fica sempre presente, mesmo vazia (use <code>.gitkeep</code>).</p>
+<h4 id="onde-entregar-cada-artefato">Onde entregar cada artefato</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Projeto</th>
+<th style="text-align: left;">Artefatos e local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">00</td>
+<td style="text-align: left;">projeto Maven na raiz da pasta; <code>docs/java-version.png</code> e <code>docs/tomcat-localhost.png</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">01</td>
+<td style="text-align: left;">projeto Maven na raiz da pasta; <code>README.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">02</td>
+<td style="text-align: left;"><code>docs/der-conceitual.png</code> (ou <code>.pdf</code>); <code>docs/modelo-logico.md</code>; <code>sql/schema.sql</code>; <code>sql/consultas.sql</code>; <code>README.md</code> com a justificativa da herança e da 3FN</td>
+</tr>
+<tr>
+<td style="text-align: left;">03</td>
+<td style="text-align: left;"><code>postman/colecao-jsonplaceholder.json</code>; <code>README.md</code> com o <strong>link</strong> do vídeo e as respostas sobre <code>POST</code> e CORS</td>
+</tr>
+<tr>
+<td style="text-align: left;">04</td>
+<td style="text-align: left;">projeto Spring Boot; testes em <code>src/test/java</code>; <code>README.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">05</td>
+<td style="text-align: left;">projeto Spring Boot; <code>docs/diagnostico-jpa.md</code> (logs do N+1 antes/depois e a <code>LazyInitializationException</code>); <code>README.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">06</td>
+<td style="text-align: left;">projeto Spring Boot; <code>postman/colecao-api-tarefas.json</code>; <code>README.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">07</td>
+<td style="text-align: left;">projeto Spring Boot; <code>postman/colecao-api-seguranca.json</code>; <code>docs/fluxo-seguranca.md</code>; <code>README.md</code> com as decisões de segurança</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vídeos não vão para o Git.</strong> Suba em um serviço (YouTube não listado, Drive) e coloque o link no <code>README.md</code> do projeto. Em geral, nenhum arquivo acima de 10 MB entra no repositório.</p>
+<h4 id="evolucao-entre-projetos-04-05-06-07">Evolução entre projetos (04 → 05 → 06 → 07)</h4>
+<p>Os projetos 05, 06 e 07 <strong>continuam</strong> o projeto anterior. Para manter cada entrega revisável e independente:</p>
+<ol>
+<li>Com o projeto anterior <strong>aprovado e já mesclado</strong> na <code>main</code>, <strong>copie a pasta</strong> dele para a nova (sem <code>target/</code>). Ex.: copie <code>04-mini-projeto-spring-boot/</code> para <code>05-mini-projeto-spring-data-jpa/</code>.</li>
+<li>Continue o desenvolvimento <strong>apenas na pasta nova</strong>.</li>
+<li><strong>Não altere</strong> a pasta do projeto anterior depois de aprovada: ela é o registro daquela etapa.</li>
+</ol>
+<p>O projeto 04 é um projeto Spring novo (Spring Initializr), não uma cópia do 01; você pode reaproveitar as classes de modelo do 01.</p>
+<h4 id="fluxo-de-git-repita-para-cada-projeto">Fluxo de Git (repita para cada projeto)</h4>
+<p>Uma branch e um Pull Request por projeto, <strong>um projeto por vez</strong>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 1. Parta da main atualizada</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>git<span class="w"> </span>pull
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># 2. Crie a branch do projeto (backend/&lt;nome-da-pasta&gt;)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>backend/01-mini-projeto-poo-terminal
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># 3. Crie a pasta, desenvolva e faça commits pequenos</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>backend/01-mini-projeto-poo-terminal
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>git<span class="w"> </span>add<span class="w"> </span>backend/01-mini-projeto-poo-terminal
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Adiciona classes de modelo e enum Prioridade"</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># 4. Envie a branch</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>backend/01-mini-projeto-poo-terminal
+</span></code></pre></div>
+<ol>
+<li>No GitHub, abra um <strong>Pull Request</strong> da sua branch para a <code>main</code> <strong>do seu próprio repositório</strong>.</li>
+<li>Título: <code>[Backend] Mini Projeto 1: POO e Terminal</code> (use o nome do desafio).</li>
+<li>Preencha o modelo do PR e peça a revisão do <strong>assessor de conhecimentos de Back-end</strong>.</li>
+<li>Se houver ajustes, faça novos commits <strong>na mesma branch</strong> e envie (<code>git push</code>); o PR se atualiza sozinho.</li>
+<li>Antes do merge, marque o projeto como concluído na tabela de <code>backend/README.md</code> (dentro do próprio PR).</li>
+<li>Com o PR <strong>aprovado</strong>, faça o merge na <code>main</code> e só então comece o próximo projeto, voltando ao passo 1.</li>
+</ol>
+<p><strong>Mensagens de commit:</strong> em português, no imperativo, descrevendo uma mudança ("Adiciona busca por título", "Corrige validação de e-mail"). Evite "ajustes", "final", "v2".</p>
+<h4 id="o-que-nunca-vai-para-o-repositorio">O que nunca vai para o repositório</h4>
+<p>Controlado pelo <code>.gitignore</code> da raiz: <code>target/</code>, <code>.idea/</code>, <code>.vscode/</code>, <code>*.iml</code>, arquivos <code>.env</code>, <code>application-local.properties</code>, <code>*.log</code>, <code>.DS_Store</code>.</p>
+<ul>
+<li><strong>Nenhum segredo</strong> (senhas, chaves JWT, tokens) em arquivo versionado. Documente no README <strong>o nome</strong> da variável de ambiente (ex.: <code>JWT_SECRET</code>), nunca o valor.</li>
+<li>Se um segredo for commitado por engano, <strong>troque-o</strong> (apagar o arquivo em outro commit não remove do histórico).</li>
+</ul>
+<h4 id="modelo-de-readmemd-de-projeto">Modelo de <code>README.md</code> de projeto</h4>
+<p>Cada pasta de projeto tem um <code>README.md</code> com:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># &lt;Nome do desafio&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">## Descrição</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Uma ou duas frases sobre o que o projeto faz.
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="gu">## Como executar</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Comandos exatos (ex.: <span class="sb">`./mvnw spring-boot:run`</span>) e variáveis de ambiente necessárias (apenas os nomes).
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="gu">## Como testar</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Comando dos testes (ex.: <span class="sb">`./mvnw test`</span>) e onde está a coleção do Postman, se houver.
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="gu">## Decisões de design</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Respostas às perguntas pedidas no desafio (veja "README" em cada projeto).
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="gu">## Links</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Vídeo (se houver) e documentação adicional.
+</span></code></pre></div>
+<p>Os arquivos-modelo (<code>README.md</code> da raiz, <code>.gitignore</code>, <code>.github/pull_request_template.md</code> e <code>backend/README.md</code>) estão prontos para copiar para o repositório do membro.</p>
+<h3 id="04-criterios-de-avaliacao-valem-para-todos-os-projetos">0.4 Critérios de Avaliação (valem para todos os projetos)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;">O que se observa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Funcionamento</strong></td>
+<td style="text-align: left;">cumpre os critérios de aceite do projeto, sem erro ao executar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Qualidade do código</strong></td>
+<td style="text-align: left;">nomes claros, classes coesas, sem código duplicado, camadas respeitadas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Testes</strong></td>
+<td style="text-align: left;">exigidos a partir do Mini Projeto 3, conforme cada critério de aceite</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>README e decisões</strong></td>
+<td style="text-align: left;">explica como rodar e justifica as escolhas pedidas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Git</strong></td>
+<td style="text-align: left;">histórico legível, commits pequenos, sem arquivos gerados (<code>target/</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Um projeto é considerado <strong>aprovado</strong> quando atende <strong>todos</strong> os critérios de aceite marcados como obrigatórios.</p>
+<hr />
+<h2 id="atividade-0">Atividade 0: Ambiente</h2>
+<p><strong>Unidade I.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/00-atividade-ambiente/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo">Objetivo</h3>
+<p>Validar o ambiente de desenvolvimento.</p>
+<h3 id="tarefa">Tarefa</h3>
+<ol>
+<li>Gere um projeto no <a href="https://start.spring.io">Spring Initializr</a> (Maven, Java 21, Spring Boot 3.x, dependência <em>Spring Web</em>).</li>
+<li>Abra na IDE e suba a aplicação com <code>./mvnw spring-boot:run</code>.</li>
+<li>Acesse <code>http://localhost:8080</code> e tire um print do resultado.</li>
+<li>Rode <code>./mvnw test</code> e confirme que o teste padrão passa.</li>
+</ol>
+<h3 id="criterios-de-aceite">Critérios de Aceite</h3>
+<ul>
+<li>Print de <code>java -version</code> mostrando a versão 21.</li>
+<li>Print do Tomcat iniciado e da requisição ao <code>localhost:8080</code>.</li>
+<li><code>./mvnw test</code> passando.</li>
+</ul>
+<hr />
+<h2 id="mini-projeto-1">1. Mini Projeto 1: POO e Terminal (Gerenciador de Tarefas)</h2>
+<p><strong>Unidades II e III.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/01-mini-projeto-poo-terminal/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_1">Objetivo</h3>
+<p>Praticar POO (classes, herança, polimorfismo, enums, exceções) e, na Parte 2, Collections, Stream API, Optional, Records e <code>java.time</code>, <strong>somente com Java e terminal</strong>.</p>
+<blockquote>
+<p><strong>Importante:</strong> não use banco de dados, interface gráfica nem frameworks nesta etapa. Tudo funciona pelo terminal, com os dados em memória. O <strong>Maven</strong> é obrigatório, mas é só a ferramenta de build (não é um framework de aplicação): o projeto segue a estrutura padrão de projeto Maven.</p>
+</blockquote>
+<h3 id="parte-1-requisitos-basicos-de-poo">Parte 1: Requisitos Básicos de POO</h3>
+<h4 id="classes">Classes</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Classe</th>
+<th style="text-align: left;">Atributos / regras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Usuario</code></td>
+<td style="text-align: left;"><code>id</code>, <code>nome</code>, <code>email</code>, <code>tarefas</code> (lista de <code>Tarefa</code>). <code>equals</code>/<code>hashCode</code> por <code>email</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Tarefa</code></td>
+<td style="text-align: left;"><code>id</code>, <code>titulo</code>, <code>descricao</code>, <code>concluida</code>. Método <code>concluir()</code> que lança exceção se já concluída. Método <code>resumo()</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>TarefaComPrazo</code></td>
+<td style="text-align: left;"><strong>herda de <code>Tarefa</code></strong>. Acrescenta <code>prazo</code> (<code>LocalDate</code>) e <code>prioridade</code> (<code>Prioridade</code>). Sobrescreve <code>resumo()</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Prioridade</code> (enum)</td>
+<td style="text-align: left;"><code>BAIXA</code>, <code>MEDIA</code>, <code>ALTA</code>, cada uma com um <code>peso</code> (1, 2, 3).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="excecoes">Exceções</h4>
+<p>Crie pelo menos <code>UsuarioNaoEncontradoException</code> e <code>TarefaNaoEncontradaException</code> (unchecked). Entradas inválidas do menu <strong>não podem derrubar o programa</strong>: trate com <code>try/catch</code>.</p>
+<h4 id="estrutura-projeto-maven-sem-spring">Estrutura (projeto Maven, sem Spring)</h4>
+<p>Crie um projeto <strong>Maven</strong> simples na IDE (IntelliJ: <em>New Project → Maven</em>; VS Code: extensão <em>Maven for Java</em>), dentro da pasta de entrega. Não use o Spring Initializr aqui.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>backend/01-mini-projeto-poo-terminal/
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── pom.xml
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── README.md
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>└── src/
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    ├── main/java/com/orcestra/tarefas/
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    │   ├── Main.java
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    │   ├── model/
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    │   │   ├── Usuario.java
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    │   │   ├── Tarefa.java
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    │   │   ├── TarefaComPrazo.java
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    │   │   └── Prioridade.java
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    │   ├── exception/
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    │   │   ├── UsuarioNaoEncontradoException.java
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    │   │   └── TarefaNaoEncontradaException.java
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    │   └── service/
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    │       └── GerenciadorService.java     // regras e listas em memória
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    └── test/java/com/orcestra/tarefas/     // pode ficar vazio (.gitkeep)
+</span></code></pre></div>
+<p><code>pom.xml</code> mínimo:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.orcestra<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>gerenciador-tarefas-terminal<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.release&gt;</span>21<span class="nt">&lt;/maven.compiler.release&gt;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nt">&lt;/project&gt;</span>
+</span></code></pre></div>
+<p>Execute pela IDE (rodando a classe <code>Main</code>) e documente no README o comando equivalente por terminal, por exemplo <code>mvn compile</code> seguido de <code>java -cp target/classes com.orcestra.tarefas.Main</code>.</p>
+<h4 id="menu-do-terminal">Menu do Terminal</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>=============================
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a> GERENCIADOR DE TAREFAS
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>=============================
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>1 - Cadastrar usuário
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>2 - Listar usuários
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>3 - Criar tarefa
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>4 - Criar tarefa com prazo
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>5 - Listar tarefas de um usuário
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>6 - Concluir tarefa
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>0 - Sair
+</span></code></pre></div>
+<h3 id="mini-projeto-1-parte-2">Parte 2: Estruturas de Dados e Manipulação de Listas</h3>
+<p>Evolua o projeto aplicando a Unidade III:</p>
+<ul>
+<li><strong>Nível 1 (Edição e remoção):</strong> editar e remover usuário; editar e remover tarefa. Ao remover um usuário, suas tarefas também saem.</li>
+<li><strong>Nível 2 (Buscas):</strong> buscar usuário por nome (contém, sem diferenciar maiúsculas) e tarefa por título. Use <code>Optional</code> quando a busca é por identificador.</li>
+<li><strong>Nível 3 (Estatísticas):</strong> total de usuários, total de tarefas, concluídas e pendentes, e tarefas por usuário (<code>Collectors.groupingBy</code>).</li>
+<li><strong>Nível 4 (Ordenação):</strong> ordenar tarefas por título; ordenar as <code>TarefaComPrazo</code> por prazo e por prioridade (ordem decrescente de <code>peso</code>). Use <code>Stream</code> e <code>Comparator</code>. Como só <code>TarefaComPrazo</code> tem prazo/prioridade, <strong>filtre com <code>instanceof</code> (pattern matching)</strong> antes de ordenar.</li>
+<li><strong>Nível 5 (Tipos modernos):</strong> use um <strong>Record</strong> <code>TarefaResumo</code> para exibir listagens, e o pacote <code>java.time</code> para marcar como <strong>atrasadas</strong> as tarefas com prazo anterior a hoje.</li>
+</ul>
+<h3 id="criterios-de-aceite_1">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- Classes e enum conforme a tabela, com encapsulamento (atributos privados).
+- Herança e polimorfismo demonstrados: uma <code>List&lt;Tarefa&gt;</code> com os dois tipos, cada um exibindo seu <code>resumo()</code>.
+- <code>equals</code>/<code>hashCode</code>/<code>toString</code> implementados em <code>Usuario</code>.
+- Menu funcional que não quebra com entrada inválida (letras, opção inexistente, id inexistente).
+- Níveis 1 a 4 da Parte 2 implementados.
+- Código organizado em pacotes.</p>
+<p><strong>Desejáveis:</strong> Nível 5.</p>
+<p><strong>README:</strong> explique por que <code>TarefaComPrazo</code> <strong>é uma</strong> <code>Tarefa</code> (herança) e <code>Usuario</code> <strong>tem</strong> <code>Tarefas</code> (composição).</p>
+<hr />
+<h2 id="mini-projeto-2">2. Mini Projeto 2: Modelagem do Banco de Dados</h2>
+<p><strong>Unidade IV.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/02-mini-projeto-modelagem-bd/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_2">Objetivo</h3>
+<p>Planejar o armazenamento do sistema, do modelo abstrato ao script SQL, e praticar SQL.</p>
+<h3 id="etapa-1-modelagem-conceitual">Etapa 1: Modelagem Conceitual</h3>
+<p>Elabore um <strong>DER</strong> (pode ser desenhado em ferramenta como o draw.io ou o dbdiagram.io) com todas as entidades do domínio de referência (<code>Usuario</code>, <code>Perfil</code>, <code>Tarefa</code>, <code>TarefaComPrazo</code>, <code>Tag</code>), seus atributos e relacionamentos, indicando as cardinalidades:
+- <strong>1:1:</strong> <code>Usuario</code> e <code>Perfil</code>.
+- <strong>1:N:</strong> <code>Usuario</code> e <code>Tarefa</code>.
+- <strong>N:N:</strong> <code>Tarefa</code> e <code>Tag</code>.
+- <strong>Especialização:</strong> <code>TarefaComPrazo</code> como tipo de <code>Tarefa</code>.</p>
+<h3 id="etapa-2-modelagem-logica">Etapa 2: Modelagem Lógica</h3>
+<p>Para cada entidade: nome da tabela, atributos com tipos, <strong>PK</strong>, <strong>FK</strong>, restrições (<code>NOT NULL</code>, <code>UNIQUE</code>), a <strong>tabela associativa</strong> do N:N e o mapeamento do <strong>enum</strong> <code>Prioridade</code>.</p>
+<p><strong>Decisão de herança:</strong> escolha uma das três estratégias da Unidade IV (tabela única, tabela por classe, tabela por classe concreta) e <strong>justifique por escrito</strong> (nas decisões do README). A trilha adota <strong>tabela única</strong> na implementação; se você escolher outra, justifique o porquê e o impacto.</p>
+<h3 id="etapa-3-modelagem-fisica-h2">Etapa 3: Modelagem Física (H2)</h3>
+<p>Escreva o script <code>schema.sql</code> com os <code>CREATE TABLE</code> para o <strong>H2</strong> (tipos, constraints e ao menos um índice em FK).</p>
+<h3 id="etapa-4-exercicios-de-sql">Etapa 4: Exercícios de SQL</h3>
+<p>Escreva em <code>consultas.sql</code> (testadas em um editor online, como o DB Fiddle, ou no console do H2 depois da Unidade VII):</p>
+<ol>
+<li>Inserir 2 usuários e 5 tarefas (uma de cada tipo, com e sem prazo).</li>
+<li>Listar as tarefas pendentes de um usuário, ordenadas por título.</li>
+<li>Listar tarefas com o <strong>nome do dono</strong> (<code>INNER JOIN</code>).</li>
+<li>Listar <strong>todos os usuários</strong>, inclusive os que não têm tarefas (<code>LEFT JOIN</code>).</li>
+<li>Contar tarefas por usuário (<code>GROUP BY</code>), mostrando apenas quem tem mais de uma (<code>HAVING</code>).</li>
+<li>Listar as tarefas de uma determinada <code>Tag</code> (JOIN na tabela associativa).</li>
+<li>Marcar como concluídas todas as tarefas com prazo vencido (<code>UPDATE</code> com <code>WHERE</code>).</li>
+</ol>
+<h3 id="criterios-de-aceite_2">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- DER completo com as quatro cardinalidades/especialização.
+- Modelo lógico com PK, FK, tipos, restrições e a tabela associativa N:N.
+- Justificativa da estratégia de herança.
+- <code>schema.sql</code> executa <strong>sem erro</strong> no H2.
+- As 7 consultas de <code>consultas.sql</code> executam e retornam o resultado esperado.
+- O modelo está em <strong>3FN</strong> (indique em uma frase por que não há dependência transitiva).</p>
+<p><strong>Importante:</strong> o Mini Projeto 4 deve <strong>seguir este modelo</strong>. Divergências são decisões a justificar.</p>
+<hr />
+<h2 id="atividade-3">Atividade 3: Coleção Postman e HTTP</h2>
+<p><strong>Unidade V.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/03-atividade-http-postman/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_3">Objetivo</h3>
+<p>Dominar a leitura e a construção de requisições HTTP antes de ter uma API própria.</p>
+<h3 id="tarefa_1">Tarefa</h3>
+<p>Crie uma coleção no <strong>Postman</strong> ou <strong>Insomnia</strong> contra a API pública <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> com, no mínimo:
+- Um <code>GET</code> de lista e um <code>GET</code> por id (path variable).
+- Um <code>GET</code> com query parameter (ex.: <code>/posts?userId=1</code>).
+- Um <code>POST</code> com body JSON.
+- Um <code>PUT</code>, um <code>PATCH</code> e um <code>DELETE</code>.
+- Um <code>GET</code> de id inexistente (observe o <code>404</code>).</p>
+<p>Grave um vídeo curto (até 5 minutos) explicando, para cada requisição, o verbo, o status recebido e o que ele significa.</p>
+<h3 id="criterios-de-aceite_3">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- Coleção exportada (<code>.json</code>) no repositório.
+- Vídeo explicando verbo, status code e diferença entre <code>PUT</code> e <code>PATCH</code>.
+- Um parágrafo no README: <em>por que <code>POST</code> não é idempotente e qual o risco?</em> e <em>o que é CORS?</em></p>
+<hr />
+<h2 id="mini-projeto-3">3. Mini Projeto 3: Esqueleto Spring Boot em Camadas</h2>
+<p><strong>Unidade VI.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/04-mini-projeto-spring-boot/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_4">Objetivo</h3>
+<p>Montar o esqueleto da aplicação aplicando IoC, DI, camadas, configuração, logs e um primeiro teste, com repositório <strong>em memória</strong> (o banco chega no Mini Projeto 4).</p>
+<h3 id="requisitos">Requisitos</h3>
+<ol>
+<li>Projeto criado no Spring Initializr com <strong>Spring Web</strong> e <strong>Spring Boot DevTools</strong> (opcional). Não adicione JPA ainda.</li>
+<li>Arquitetura em camadas, com <strong>injeção por construtor</strong> em todas as classes:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>src/main/java/com/orcestra/tarefas/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── TarefasApplication.java
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── controller/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   └── UsuarioController.java
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>├── service/
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>│   └── UsuarioService.java
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>├── repository/
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>│   └── UsuarioRepository.java       // @Repository com Map em memória
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>├── model/
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>│   ├── Usuario.java
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>│   ├── Tarefa.java
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>│   ├── TarefaComPrazo.java
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>│   └── Prioridade.java
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>└── exception/
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    └── UsuarioNaoEncontradoException.java
+</span></code></pre></div>
+<ol>
+<li><code>UsuarioRepository</code> com <code>save</code>, <code>findById</code> (devolve <code>Optional</code>), <code>findAll</code> e <code>deleteById</code>, usando os <strong>mesmos nomes do Spring Data</strong> (na Unidade VII você os substituirá por um <code>JpaRepository</code>).</li>
+<li><code>UsuarioService</code> com a lógica de listar, buscar por id (lança <code>UsuarioNaoEncontradoException</code> quando não existe) e cadastrar.</li>
+<li><code>UsuarioController</code> com <code>GET /usuarios</code> e <code>GET /usuarios/{id}</code> (<strong>por ora podem devolver o modelo direto</strong>; os DTOs e o tratamento de erros são a Unidade VIII).</li>
+<li><code>application.properties</code> com <code>spring.application.name</code> e <code>logging.level.com.orcestra=DEBUG</code>; <strong>um valor lido de uma variável de ambiente</strong> via <code>@Value</code> (ex.: um nome de ambiente).</li>
+<li>Logs com SLF4J (<code>log.info</code>) no Service ao cadastrar e ao não encontrar.</li>
+<li>Um <strong>bean</strong> declarado com <code>@Bean</code> em uma classe <code>@Configuration</code> (ex.: um <code>Clock</code>).</li>
+</ol>
+<h3 id="criterios-de-aceite_4">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- <code>./mvnw spring-boot:run</code> sobe sem erro e <code>GET /usuarios</code> responde <code>200</code>.
+- Camadas respeitadas (Controller não acessa Repository) e <strong>nenhum <code>@Autowired</code> em campo</strong>.
+- Pelo menos <strong>2 testes de unidade de Service</strong> com Mockito (caminho feliz e usuário inexistente).
+- Nenhum <code>System.out.println</code>; logs via SLF4J.
+- Valor sensível/ambiental vindo de variável de ambiente (sem valor fixo no código).</p>
+<p><strong>README:</strong> explique, com suas palavras, o que o Spring faz com <code>@SpringBootApplication</code> e por que o <code>@Service</code> precisa estar abaixo do pacote principal.</p>
+<hr />
+<h2 id="mini-projeto-4">4. Mini Projeto 4: Persistência com Spring Data JPA</h2>
+<p><strong>Unidade VII.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/05-mini-projeto-spring-data-jpa/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_5">Objetivo</h3>
+<p>Trocar o repositório em memória por persistência real no <strong>H2</strong>, implementando o modelo do Mini Projeto 2 e <strong>migrando as funcionalidades de busca, estatística e ordenação</strong> do Mini Projeto 1 para consultas JPA.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<p><strong>Dependências:</strong> adicione <code>Spring Data JPA</code> e <code>H2 Database</code>.</p>
+<p><strong>Configuração:</strong> <code>show-sql</code> e <code>format_sql</code> ligados; console do H2 habilitado (<code>spring.h2.console.enabled=true</code>); <code>spring.jpa.open-in-view=false</code>.</p>
+<p><strong>Entidades</strong> (seguindo o Mini Projeto 2):
+- <code>Usuario</code>, <code>Perfil</code> (1:1), <code>Tarefa</code>, <code>TarefaComPrazo</code> (herança <code>SINGLE_TABLE</code>), <code>Tag</code> (N:N com <code>Tarefa</code>).
+- Enum <code>Prioridade</code> com <code>@Enumerated(EnumType.STRING)</code>.
+- Relação bidirecional <code>Usuario</code> / <code>Tarefa</code> com <strong><code>mappedBy</code></strong>, <code>cascade</code> e <code>orphanRemoval</code>, e método auxiliar <code>adicionarTarefa</code>.
+- <code>@ManyToOne</code> com <code>FetchType.LAZY</code>.</p>
+<p><strong>Repositórios:</strong> <code>UsuarioRepository</code>, <code>TarefaRepository</code> e <code>TagRepository</code> como <code>JpaRepository</code>. O <strong>Service do Mini Projeto 3 deve continuar funcionando sem mudança de lógica</strong> (só ajustes mínimos).</p>
+<p><strong>Consultas obrigatórias</strong> (cada uma com a técnica indicada):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Funcionalidade</th>
+<th style="text-align: left;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Buscar usuário por e-mail; verificar se e-mail já existe</td>
+<td style="text-align: left;">Query Methods (<code>findByEmail</code>, <code>existsByEmail</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Buscar tarefas por título (contém, sem diferenciar maiúsculas)</td>
+<td style="text-align: left;">Query Method</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listar tarefas de um usuário ordenadas por título</td>
+<td style="text-align: left;">Query Method</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listar pendentes de um usuário</td>
+<td style="text-align: left;"><code>@Query</code> (JPQL)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Estatística: total, concluídas e pendentes por usuário</td>
+<td style="text-align: left;"><code>@Query</code> (JPQL com <code>COUNT</code>/<code>GROUP BY</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listar tarefas paginadas (com <code>Pageable</code>)</td>
+<td style="text-align: left;"><code>Page&lt;Tarefa&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Busca com <strong>filtros opcionais</strong> (concluída, título, prioridade)</td>
+<td style="text-align: left;"><code>Specification</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Listar usuários com suas tarefas <strong>sem N+1</strong></td>
+<td style="text-align: left;"><code>@EntityGraph</code> ou <code>JOIN FETCH</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Transação:</strong> um método de Service <code>@Transactional</code> que conclui uma tarefa <strong>sem chamar <code>save()</code></strong> (dirty checking) e outro que cadastra um usuário com seu <code>Perfil</code> em uma só operação.</p>
+<p><strong>Exercício de diagnóstico (obrigatório, vai em <code>docs/diagnostico-jpa.md</code>):</strong>
+1. Provoque um <strong>N+1</strong> listando usuários e acessando <code>tarefas</code>; cole no documento o trecho do log que o evidencia e a correção aplicada, com o log "depois".
+2. Provoque uma <strong><code>LazyInitializationException</code></strong> (acessando uma relação <code>LAZY</code> fora da transação) e explique a correção.</p>
+<h3 id="criterios-de-aceite_5">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- Todas as entidades mapeadas, com as relações 1:1, 1:N, N:N e a herança.
+- Dados persistem entre as chamadas (e somem ao reiniciar, por ser H2 em memória); o console do H2 mostra as tabelas conforme o modelo do Mini Projeto 2.
+- Todas as consultas da tabela implementadas com a técnica indicada.
+- N+1 e <code>LazyInitializationException</code> demonstrados e corrigidos em <code>docs/diagnostico-jpa.md</code>.
+- <strong>Pelo menos 3 testes <code>@DataJpaTest</code></strong> (por exemplo, a <code>@Query</code> de pendentes, a paginação e a <code>Specification</code>).
+- Nenhum <code>FetchType.EAGER</code> sem justificativa; nenhum <code>@Data</code> em entidade.</p>
+<hr />
+<h2 id="mini-projeto-5">5. Mini Projeto 5: API REST com Spring Web</h2>
+<p><strong>Unidade VIII.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/06-mini-projeto-spring-web/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_6">Objetivo</h3>
+<p>Expor a persistência como uma <strong>API REST completa</strong>, com DTOs, validação, erros padronizados, documentação e testes.</p>
+<h3 id="dependencias">Dependências</h3>
+<p>Adicione <code>Validation</code> e <code>springdoc-openapi</code> (Swagger).</p>
+<h3 id="estrutura">Estrutura</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>src/main/java/com/orcestra/tarefas/
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── controller/    UsuarioController, TarefaController, TagController
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── service/
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── repository/
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── model/         (entidades)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├── dto/           UsuarioRequest/Response, TarefaRequest/Response, TagRequest/Response (Records)
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>└── exception/     RecursoNaoEncontradoException (base), ConflitoException, GlobalExceptionHandler
+</span></code></pre></div>
+<h3 id="endpoints">Endpoints</h3>
+<h4 id="usuarios-usuarios">Usuários (<code>/usuarios</code>)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Sucesso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/usuarios</code></td>
+<td style="text-align: left;">Lista usuários (paginado)</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/usuarios/{id}</code></td>
+<td style="text-align: left;">Busca por id</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;"><code>/usuarios</code></td>
+<td style="text-align: left;">Cadastra usuário</td>
+<td style="text-align: center;"><code>201</code> + <code>Location</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PUT</code></td>
+<td style="text-align: left;"><code>/usuarios/{id}</code></td>
+<td style="text-align: left;">Substitui os dados</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DELETE</code></td>
+<td style="text-align: left;"><code>/usuarios/{id}</code></td>
+<td style="text-align: left;">Remove usuário</td>
+<td style="text-align: center;"><code>204</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/usuarios/{id}/tarefas</code></td>
+<td style="text-align: left;">Tarefas do usuário</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tarefas-tarefas">Tarefas (<code>/tarefas</code>)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Sucesso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/tarefas</code></td>
+<td style="text-align: left;">Lista com filtros opcionais <code>concluida</code>, <code>titulo</code>, <code>prioridade</code> e paginação</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/tarefas/{id}</code></td>
+<td style="text-align: left;">Busca por id</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST</code></td>
+<td style="text-align: left;"><code>/tarefas</code></td>
+<td style="text-align: left;">Cria tarefa (comum ou com prazo, conforme os campos enviados)</td>
+<td style="text-align: center;"><code>201</code> + <code>Location</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PUT</code></td>
+<td style="text-align: left;"><code>/tarefas/{id}</code></td>
+<td style="text-align: left;">Substitui a tarefa</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PATCH</code></td>
+<td style="text-align: left;"><code>/tarefas/{id}/concluir</code></td>
+<td style="text-align: left;">Marca como concluída</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DELETE</code></td>
+<td style="text-align: left;"><code>/tarefas/{id}</code></td>
+<td style="text-align: left;">Remove tarefa</td>
+<td style="text-align: center;"><code>204</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET</code></td>
+<td style="text-align: left;"><code>/tarefas/estatisticas</code></td>
+<td style="text-align: left;">Total, concluídas e pendentes</td>
+<td style="text-align: center;"><code>200</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tags-tags">Tags (<code>/tags</code>)</h4>
+<p><code>GET /tags</code>, <code>POST /tags</code> (<code>201</code>), <code>DELETE /tags/{id}</code> (<code>204</code>) e <code>POST /tarefas/{id}/tags/{tagId}</code> para associar.</p>
+<h3 id="exemplos-de-payload">Exemplos de Payload</h3>
+<p><strong>Criar usuário</strong> (<code>POST /usuarios</code>)
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"João Silva"</span><span class="p">,</span><span class="w"> </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joao@orcestra.com"</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Criar tarefa simples</strong> (<code>POST /tarefas</code>)
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">"titulo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Implementar Controller"</span><span class="p">,</span><span class="w"> </span><span class="nt">"descricao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Criar endpoints REST"</span><span class="p">,</span><span class="w"> </span><span class="nt">"usuarioId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Criar tarefa com prazo</strong>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">"titulo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entregar projeto"</span><span class="p">,</span><span class="w"> </span><span class="nt">"usuarioId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"prazo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-12-31"</span><span class="p">,</span><span class="w"> </span><span class="nt">"prioridade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALTA"</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Exemplo de erro de validação</strong> (<code>400</code>)
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about:blank"</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Erro de validação"</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dados inválidos"</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">"instance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tarefas"</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nt">"erros"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"titulo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O título é obrigatório"</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h3 id="regras">Regras</h3>
+<ul>
+<li><strong>O Controller nunca recebe nem devolve entidade</strong>: somente DTOs (Records).</li>
+<li>Validação: <code>titulo</code> obrigatório e até 150 caracteres; <code>email</code> válido e <strong>único</strong> (<code>409</code> se duplicado); <code>usuarioId</code> obrigatório e existente (<code>404</code> se não existir); <code>prazo</code> não pode estar no passado.</li>
+<li><strong>Todos os erros (400, 404, 409, 500) usam o mesmo formato <code>ProblemDetail</code></strong>, e o <code>500</code> nunca mostra stack trace.</li>
+<li>Nenhum Controller com <code>try/catch</code> de regra de negócio.</li>
+<li>CORS configurado para a origem do front-end (<code>http://localhost:3000</code>).</li>
+<li>Swagger acessível em <code>/swagger-ui.html</code>.</li>
+</ul>
+<h3 id="criterios-de-aceite_6">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- Todos os endpoints das tabelas funcionando com os <strong>status codes indicados</strong>.
+- DTOs de entrada e saída; sem recursão infinita no JSON; sem expor a entidade.
+- <code>@Valid</code> com mensagens em português e respostas <code>400</code> no formato padrão.
+- <code>@RestControllerAdvice</code> cobrindo 404, 409, 400 e o handler genérico <code>500</code>.
+- <strong>Coleção Postman</strong> (a da Atividade 3, adaptada) cobrindo todos os endpoints, incluindo casos de erro, exportada no repositório.
+- <strong>Pelo menos 4 testes <code>@WebMvcTest</code></strong>: um <code>201</code> com <code>Location</code>, um <code>404</code>, um <code>400</code> de validação e um <code>409</code>.
+- Testes de Service e de Repository anteriores continuam passando.</p>
+<p><strong>README:</strong> liste três motivos pelos quais a API não expõe entidades e explique a decisão do <code>PUT</code> (substitui) vs <code>PATCH</code> (parcial) na tarefa.</p>
+<hr />
+<h2 id="projeto-final">6. Projeto Final: Spring Security e Autenticação</h2>
+<p><strong>Unidade IX.</strong></p>
+<p><strong>Pasta de entrega:</strong> <code>backend/07-projeto-final-spring-security/</code> (veja a seção 0.3)</p>
+<h3 id="objetivo_7">Objetivo</h3>
+<p>Proteger a API do Mini Projeto 5 com autenticação <strong>JWT</strong> e autorização por perfil <strong>e por dono do recurso</strong>.</p>
+<h3 id="funcionalidades">Funcionalidades</h3>
+<ol>
+<li><strong>Cadastro e login:</strong></li>
+<li><code>POST /auth/registro</code> cria o usuário com a <strong>senha em BCrypt</strong> (campo <code>senhaHash</code>) e papel <code>USER</code>.</li>
+<li><code>POST /auth/login</code> devolve um JWT com expiração.</li>
+<li>O campo de senha <strong>nunca</strong> aparece em nenhuma resposta.</li>
+<li><strong>Autenticação stateless com JWT</strong> (somente JWT; sessão não faz parte do projeto), com filtro <code>OncePerRequestFilter</code> e <code>SecurityFilterChain</code> como bean.</li>
+<li><strong>Rotas públicas:</strong> <code>/auth/**</code> e a documentação Swagger. <strong>Todas as demais exigem token.</strong></li>
+<li><strong>Perfis:</strong> enum <code>Papel { USER, ADMIN }</code>. Apenas <code>ADMIN</code> pode remover usuários e listar <strong>todos</strong> os usuários.</li>
+<li><strong>Autorização por dono do recurso:</strong> um <code>USER</code> só pode <strong>ver, editar e excluir as próprias tarefas</strong>. Ao criar uma tarefa, o dono é o usuário <strong>autenticado</strong> (o <code>usuarioId</code> do corpo é ignorado). Listagens de tarefas devolvem somente as do usuário logado (o <code>ADMIN</code> vê todas).</li>
+<li><strong>Erros de segurança no formato <code>ProblemDetail</code>:</strong> sem token ou token inválido/expirado → <code>401</code>; sem permissão → <code>403</code>; credenciais erradas no login → <code>401</code> com mensagem genérica.</li>
+<li><strong>Segredo do JWT em variável de ambiente.</strong></li>
+</ol>
+<h3 id="criterios-de-aceite_7">Critérios de Aceite</h3>
+<p><strong>Obrigatórios:</strong>
+- Senhas guardadas <strong>apenas</strong> como hash BCrypt.
+- Login devolve JWT; o token expira.
+- <strong>Sem token → <code>401</code></strong> (não <code>403</code>) em qualquer rota protegida.
+- Usuário <code>USER</code> tentando mexer na tarefa de outro → <code>403</code>; <code>ADMIN</code> consegue.
+- O cadastro público <strong>não permite</strong> escolher o papel <code>ADMIN</code>.
+- O segredo do JWT <strong>não está</strong> no repositório (verificar histórico de commits e <code>application.properties</code>).
+- <strong>Fluxo de testes no Postman</strong> documentado em <code>docs/fluxo-seguranca.md</code>: registro → login → uso do token → tentativa em recurso alheio (403) → sem token (401) → token adulterado (401).
+- Pelo menos <strong>3 testes automatizados</strong> de segurança (sem token, papel insuficiente, dono vs. não dono).
+- <code>AccessDeniedException</code> tratada no <code>@RestControllerAdvice</code> (nenhum <code>403</code> sendo devolvido como <code>500</code>).</p>
+<p><strong>README (decisões de segurança):</strong>
+1. Por que o payload do JWT não pode ter dados sensíveis.
+2. Por que o <code>csrf</code> pôde ser desativado nesta API.
+3. Quando a tarefa existe mas é de outro usuário, a API devolve <code>403</code> ou <code>404</code>? Justifique.
+4. O que acontece com um token válido se o usuário for removido? Quais os limites do modelo stateless?</p>
+<hr />
+<h2 id="7-entrega-e-revisao">7. Entrega e Revisão</h2>
+<h3 id="checklist-final-de-cada-projeto">Checklist final de cada projeto</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Está na pasta correta, com o nome exato do mapa da seção 0.3, dentro de <code>backend/</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O <code>pom.xml</code> está na raiz da pasta do projeto, e o projeto abre sozinho na IDE.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O <code>README.md</code> segue o modelo e tem as decisões de design pedidas pelo desafio.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O projeto sobe com os comandos do README e os testes exigidos passam.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sem <code>target/</code>, <code>.idea/</code>, segredos nem arquivos grandes (vídeos entram como link).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Coleções do Postman exportadas em <code>postman/</code> (a partir do projeto 06; no 03 também).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A tabela de <code>backend/README.md</code> foi atualizada.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mexi <strong>apenas</strong> na pasta do projeto e em <code>backend/README.md</code>.</li>
+</ul>
+<h3 id="como-a-revisao-funciona">Como a revisão funciona</h3>
+<ol>
+<li>O membro abre o Pull Request (seção 0.3) e solicita a revisão do <strong>assessor de conhecimentos de Back-end</strong>.</li>
+<li>O assessor avalia pelos <strong>critérios de avaliação (seção 0.4)</strong> e pelos <strong>critérios de aceite</strong> do projeto, comentando no PR o que não atende aos obrigatórios.</li>
+<li>O membro corrige na mesma branch até a aprovação.</li>
+<li>Com o PR <strong>aprovado</strong>, o membro faz o merge na <code>main</code> e só então começa o próximo projeto.</li>
+</ol>
+<hr />
+<p><a class="md-button" href="../">← Voltar para a Visão Geral do Back-end</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../unidade-7/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Unidade VII – Spring Security">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Unidade VII – Spring Security
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../trilha-devops/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Visão Geral">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Visão Geral
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
